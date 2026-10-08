@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F07C72"/>
+      <stop offset="1" stop-color="#F2C94C"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <!-- artist palette -->
+  <circle cx="29" cy="35" r="19" fill="#FFFFFF"/>
+  <!-- paint dabs on palette -->
+  <circle cx="21" cy="27" r="4.6" fill="#F07C72"/>
+  <circle cx="30" cy="22.5" r="4.6" fill="#F2C94C"/>
+  <circle cx="38.5" cy="27.5" r="4.6" fill="#72B7D8"/>
+  <circle cx="20.5" cy="37" r="4.6" fill="#A8C9A5"/>
+  <!-- thumb hole -->
+  <circle cx="37" cy="41" r="5" fill="#E8786E"/>
+  <!-- little splatter drops -->
+  <circle cx="49" cy="15" r="3.2" fill="#FFFFFF"/>
+  <circle cx="54.5" cy="22" r="2" fill="#FFFFFF" opacity=".8"/>
+  <circle cx="12" cy="50" r="2.4" fill="#FFFFFF" opacity=".85"/>
+</svg>

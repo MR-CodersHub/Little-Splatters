@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="slogan" content="Where Every Child Creates">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login or Register for a Little Splatters parent account — manage your child's art class bookings, view portfolios, and access progress reports.">
+  <title>Login & Register | Little Splatters � Where Every Child Creates</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+  <meta name="theme-color" content="#F07C72">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body data-page="login">
+
+  <div id="navbar-placeholder"></div>
+
+  <main class="page-wrapper">
+
+    <!-- =============================================
+         SECTION 1 — BRANDED AUTHENTICATION HERO
+         ============================================= -->
+    <section class="auth-hero" id="auth-hero" aria-labelledby="auth-h1">
+      <div class="hero-bg-shapes" aria-hidden="true">
+        <div class="paint-blob" style="width:400px;height:400px;background:var(--coral-pink);top:-120px;right:-80px;opacity:0.12;"></div>
+        <div class="paint-blob" style="width:250px;height:250px;background:var(--sunshine-yellow);bottom:60px;left:-60px;opacity:0.1;animation-delay:2s;"></div>
+        <div class="paint-blob" style="width:180px;height:180px;background:var(--sky-blue);top:40%;left:20%;opacity:0.08;animation-delay:4s;"></div>
+      </div>
+      <div class="container text-center" data-reveal>
+        <a href="../index.html" class="navbar-logo" style="display:inline-flex;margin-bottom:32px;" aria-label="Little Splatters Home — Where Every Child Creates">
+          <div class="navbar-logo-icon" style="width:56px;height:56px;font-size:1.8rem;">🎨</div>
+          <div class="navbar-logo-stack">
+            <div class="navbar-logo-text" style="font-size:1.8rem;">Little <span>Splatters</span></div>
+            <small class="navbar-tagline" style="color:var(--sunshine-yellow);">Where Every Child Creates</small>
+          </div>
+        </a>
+        <div class="section-label" style="background:rgba(255,248,234,0.15);color:var(--sunshine-yellow);margin:0 auto 20px;display:inline-flex;">🔐 Parent Account</div>
+        <h1 id="auth-h1">Your Child's Creative World,<br><span style="color:var(--sunshine-yellow);">In Your Hands</span></h1>
+        <p style="max-width:560px;margin:16px auto 0;font-size:1.05rem;">Log in or create a parent account to manage class bookings, track your child's artistic development, and access their digital portfolio.</p>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 2 — LOGIN FORM
+         ============================================= -->
+    <!-- =============================================
+         SECTION 3 — REGISTRATION FORM
+         (Combined into one balanced section)
+         ============================================= -->
+    <section class="auth-forms-section" id="auth-forms" aria-label="Login and registration forms">
+      <div class="container">
+        <div class="auth-grid">
+          <!-- LOGIN -->
+          <div class="auth-card" id="login-card">
+            <div class="auth-card-header">
+              <div class="auth-icon" style="background:var(--coral-light);">🔑</div>
+              <h2 style="font-size:1.6rem;">Welcome Back</h2>
+              <p style="font-size:0.9rem;color:var(--text-muted);">Sign in to your parent account</p>
+            </div>
+
+            <form id="login-form" novalidate aria-label="Login form">
+              <div class="form-group">
+                <label class="form-label" for="login-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="login-email" name="login-email" class="form-control"
+                       placeholder="parent@email.com" data-validate="required,email" autocomplete="email">
+                <span class="form-error" id="login-email-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="login-password" style="display:flex;justify-content:space-between;">
+                  <span>Password <span class="required">*</span></span>
+                  <a href="#" style="font-size:0.8rem;color:var(--coral-pink);" id="forgot-pw-link">Forgot password?</a>
+                </label>
+                <input type="password" id="login-password" name="login-password" class="form-control"
+                       placeholder="Enter your password" data-validate="required" autocomplete="current-password">
+                <span class="form-error" id="login-password-error" role="alert"></span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:24px;">
+                <input type="checkbox" id="remember-me" style="width:16px;height:16px;accent-color:var(--coral-pink);">
+                <label for="remember-me" style="font-size:0.85rem;color:var(--text-secondary);">Keep me signed in</label>
+              </div>
+              <button type="submit" class="btn btn-primary w-100" style="justify-content:center;" id="login-submit-btn">
+                🔑 Sign In to My Account
+              </button>
+            </form>
+
+            <div class="auth-divider">or continue with</div>
+            <div style="display:flex;gap:12px;">
+              <button class="btn btn-outline w-100" style="justify-content:center;gap:8px;" id="google-login-btn">
+                <span>🔵</span> Google
+              </button>
+              <button class="btn btn-outline w-100" style="justify-content:center;gap:8px;" id="fb-login-btn">
+                <span>📘</span> Facebook
+              </button>
+            </div>
+
+            <p style="text-align:center;margin-top:20px;font-size:0.85rem;color:var(--text-muted);">
+              Don't have an account? <a href="#register-card" style="color:var(--coral-pink);font-weight:700;">Create one free →</a>
+            </p>
+          </div>
+
+          <!-- REGISTER -->
+          <div class="auth-card" id="register-card">
+            <div class="auth-card-header">
+              <div class="auth-icon" style="background:var(--mint-light);">👨‍👩‍👧</div>
+              <h2 style="font-size:1.6rem;">Create a Parent Account</h2>
+              <p style="font-size:0.9rem;color:var(--text-muted);">Join the Little Splatters family today</p>
+            </div>
+
+            <form id="register-form" novalidate aria-label="Registration form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="reg-first">First Name <span class="required">*</span></label>
+                  <input type="text" id="reg-first" name="reg-first" class="form-control"
+                         placeholder="Sarah" data-validate="required" autocomplete="given-name">
+                  <span class="form-error" id="reg-first-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="reg-last">Last Name <span class="required">*</span></label>
+                  <input type="text" id="reg-last" name="reg-last" class="form-control"
+                         placeholder="Thompson" data-validate="required" autocomplete="family-name">
+                  <span class="form-error" id="reg-last-error" role="alert"></span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="reg-email" name="reg-email" class="form-control"
+                       placeholder="parent@email.com" data-validate="required,email" autocomplete="email">
+                <span class="form-error" id="reg-email-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="reg-phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="reg-phone" name="reg-phone" class="form-control"
+                       placeholder="+1 (555) 000-0000" data-validate="required,phone" autocomplete="tel">
+                <span class="form-error" id="reg-phone-error" role="alert"></span>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="reg-password">Password <span class="required">*</span></label>
+                  <input type="password" id="reg-password" name="reg-password" class="form-control"
+                         placeholder="Min. 8 characters" data-validate="required,minLength" autocomplete="new-password">
+                  <span class="form-error" id="reg-password-error" role="alert"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="reg-confirm">Confirm Password <span class="required">*</span></label>
+                  <input type="password" id="reg-confirm" name="reg-confirm" class="form-control"
+                         placeholder="Repeat password" data-validate="required" autocomplete="new-password">
+                  <span class="form-error" id="reg-confirm-error" role="alert"></span>
+                </div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:24px;">
+                <input type="checkbox" id="agree-terms" style="width:16px;height:16px;accent-color:var(--coral-pink);margin-top:2px;flex-shrink:0;" required>
+                <label for="agree-terms" style="font-size:0.82rem;color:var(--text-secondary);">
+                  I agree to the <a href="#" style="color:var(--coral-pink);">Terms of Service</a> and <a href="#" style="color:var(--coral-pink);">Privacy Policy</a>. I consent to receiving class updates and newsletters.
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary w-100" style="justify-content:center;" id="register-submit-btn">
+                🌟 Create My Parent Account
+              </button>
+            </form>
+
+            <p style="text-align:center;margin-top:20px;font-size:0.85rem;color:var(--text-muted);">
+              Already have an account? <a href="#login-card" style="color:var(--coral-pink);font-weight:700;">Sign in →</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 4 — PARENT ACCOUNT BENEFITS
+         ============================================= -->
+    <section class="section" id="account-benefits" aria-labelledby="benefits-h2">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <div class="section-label yellow">✨ Account Benefits</div>
+          <h2 id="benefits-h2">Everything in One <span>Parent Portal</span></h2>
+          <p>Your Little Splatters parent account gives you a beautiful, easy-to-use portal to manage everything about your child's creative education.</p>
+        </div>
+
+        <div class="benefits-grid" data-reveal>
+          <div class="benefit-card">
+            <div class="benefit-icon" style="background:var(--coral-light);">📅</div>
+            <div>
+              <h5>Easy Class Booking</h5>
+              <p style="font-size:0.82rem;color:var(--text-muted);">Book, reschedule, or cancel classes with ease. See real-time availability and manage your schedule all in one place.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon" style="background:var(--blue-light);">🖼️</div>
+            <div>
+              <h5>Digital Art Portfolio</h5>
+              <p style="font-size:0.82rem;color:var(--text-muted);">Access your child's growing digital portfolio — every artwork photographed and archived so nothing is ever lost.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon" style="background:var(--yellow-light);">📊</div>
+            <div>
+              <h5>Progress Reports</h5>
+              <p style="font-size:0.82rem;color:var(--text-muted);">Read detailed termly progress reports from your child's instructor — tracking growth, skills, and personal development.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon" style="background:var(--mint-light);">💬</div>
+            <div>
+              <h5>Message Instructors</h5>
+              <p style="font-size:0.82rem;color:var(--text-muted);">Send direct messages to your child's instructor with questions, feedback, or updates about your child's needs.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon" style="background:var(--coral-light);">💰</div>
+            <div>
+              <h5>Billing Management</h5>
+              <p style="font-size:0.82rem;color:var(--text-muted);">View invoices, manage payment methods, and upgrade or change your membership plan at any time.</p>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon" style="background:var(--blue-light);">🎪</div>
+            <div>
+              <h5>Workshop Priority Access</h5>
+              <p style="font-size:0.82rem;color:var(--text-muted);">Account holders get 48-hour priority access to holiday workshops and special event bookings before public release.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 5 — ACCOUNT / HELP INFORMATION
+         ============================================= -->
+    <section class="section" style="background:var(--bg-secondary);" id="account-help" aria-labelledby="help-h2">
+      <div class="container">
+        <div class="section-header text-center" data-reveal>
+          <div class="section-label blue">❓ Account Help</div>
+          <h2 id="help-h2">Frequently Asked <span>Account Questions</span></h2>
+        </div>
+
+        <div style="max-width:780px;margin:0 auto;" data-reveal>
+          <div class="accordion" role="list">
+            <div class="accordion-item" role="listitem">
+              <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+                Is creating a parent account mandatory?
+                <div class="accordion-icon">+</div>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">An account is recommended for enrolled students as it gives you full access to your child's portfolio, progress reports, and class management. For trial classes, no account is needed — just fill in our booking form on the Contact page.</div>
+              </div>
+            </div>
+            <div class="accordion-item" role="listitem">
+              <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+                Can I add multiple children to one account?
+                <div class="accordion-icon">+</div>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">Absolutely! One parent account can manage multiple children. Each child has their own profile, portfolio, and class schedule within your single account. Billing for multiple children is consolidated for your convenience.</div>
+              </div>
+            </div>
+            <div class="accordion-item" role="listitem">
+              <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+                What happens to my account if I cancel my membership?
+                <div class="accordion-icon">+</div>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">Your account and your child's digital portfolio remain accessible even after a membership ends. You can re-enrol at any time. We never delete student artwork or progress records without explicit request.</div>
+              </div>
+            </div>
+            <div class="accordion-item" role="listitem">
+              <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
+                How is my data protected?
+                <div class="accordion-icon">+</div>
+              </div>
+              <div class="accordion-body">
+                <div class="accordion-body-inner">We take data protection extremely seriously. All personal data is encrypted, stored securely, and never shared with third parties. We are fully GDPR compliant and our Privacy Policy outlines all data handling practices in plain language.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================
+         SECTION 6 — CONTACT SUPPORT CTA
+         ============================================= -->
+    <section class="section" id="support-cta" aria-labelledby="support-h2">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="responsive-2col" data-reveal>
+          <!-- Support -->
+          <div class="cta-banner" style="background:linear-gradient(135deg,var(--ink-plum),#4A3858);">
+            <div style="position:relative;z-index:1;">
+              <div style="font-size:2.5rem;margin-bottom:12px;">🛟</div>
+              <h2 id="support-h2" style="font-size:1.8rem;">Need Help with Your Account?</h2>
+              <p style="margin-bottom:24px;">Our friendly support team is available Monday to Saturday, 9am–5pm. We're always happy to help!</p>
+              <div style="display:flex;flex-direction:column;gap:12px;">
+                <a href="tel:+15552872787" class="btn btn-outline-white" id="support-call-btn">📞 Call +1 (555) 287-ARTS</a>
+                <a href="mailto:hello@littlesplatters.com" class="btn btn-primary" id="support-email-btn">✉️ Email Us</a>
+              </div>
+            </div>
+          </div>
+          <!-- Trial CTA -->
+          <div class="cta-banner" style="background:linear-gradient(135deg,var(--coral-pink),var(--sunshine-yellow));">
+            <div style="position:relative;z-index:1;">
+              <div style="font-size:2.5rem;margin-bottom:12px;">🎨</div>
+              <h2 style="font-size:1.8rem;color:var(--ink-plum);">Not Enrolled Yet?</h2>
+              <p style="color:rgba(51,38,61,0.8);margin-bottom:24px;">Book your child's free trial class and experience Little Splatters before creating an account.</p>
+              <a href="contact.html" class="btn btn-secondary btn-lg" id="login-trial-cta">📅 Book Free Trial Class</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    // Password confirmation validation
+    document.addEventListener('DOMContentLoaded', () => {
+      const regForm = document.getElementById('register-form');
+      if (regForm) {
+        regForm.addEventListener('submit', (e) => {
+          const pw = document.getElementById('reg-password').value;
+          const confirm = document.getElementById('reg-confirm').value;
+          const confirmError = document.getElementById('reg-confirm-error');
+          if (pw !== confirm) {
+            e.stopImmediatePropagation();
+            document.getElementById('reg-confirm').classList.add('error');
+            if (confirmError) {
+              confirmError.textContent = 'Passwords do not match';
+              confirmError.classList.add('show');
+            }
+          }
+        }, true);
+      }
+
+      // Social login buttons
+      document.getElementById('google-login-btn')?.addEventListener('click', () => {
+        if (window.Toast) Toast.info('Google Login', 'Social login demo — not connected in this preview.');
+      });
+      document.getElementById('fb-login-btn')?.addEventListener('click', () => {
+        if (window.Toast) Toast.info('Facebook Login', 'Social login demo — not connected in this preview.');
+      });
+    });
+  </script>
+</body>
+</html>
