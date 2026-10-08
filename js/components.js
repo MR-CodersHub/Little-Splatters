@@ -53,7 +53,7 @@ function getNavbarHTML(activePage = '') {
       return `
         <li class="nav-item nav-dropdown">
           <a href="${siteLink(page.href)}" class="nav-link ${isActive ? 'active' : ''}" aria-haspopup="true">
-            ${page.label} <span class="nav-dropdown-icon">▾</span>
+            ${page.label} <span class="nav-dropdown-icon"><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></span>
           </a>
           <div class="nav-dropdown-menu">${subLinks}</div>
         </li>`;
@@ -65,27 +65,27 @@ function getNavbarHTML(activePage = '') {
   }).join('');
 
   const mobileLinks = [
-    { label: '🏠 Home — General', href: 'index.html', key: 'home' },
-    { label: '🎨 Home — Art Education', href: 'home2.html', key: 'home2' },
-    { label: '💛 About Us', href: 'about.html', key: 'about' },
-    { label: '🖌️ Services', href: 'services.html', key: 'services' },
-    { label: '🎭 Service Details', href: 'service-details.html', key: 'service-details' },
-    { label: '📖 Blog', href: 'blog.html', key: 'blog' },
-    { label: '📝 Blog Details', href: 'blog-details.html', key: 'blog-details' },
-    { label: '📞 Contact Us', href: 'contact.html', key: 'contact' },
-    { label: '💰 Pricing', href: 'pricing.html', key: 'pricing' },
-    { label: '🔐 Login / Register', href: 'login.html', key: 'login' },
-    { label: '🔧 Maintenance', href: 'maintenance.html', key: 'maintenance' },
-    { label: '🗺️ Sitemap', href: 'sitemap.html', key: 'sitemap' },
-    { label: '🔍 404 Page', href: '404.html', key: '404' },
-    { label: '🚀 Coming Soon', href: 'coming-soon.html', key: 'coming-soon' },
+    { label: '<i class="fa-solid fa-house" aria-hidden="true"></i> Home — General', href: 'index.html', key: 'home' },
+    { label: '<i class="fa-solid fa-palette" aria-hidden="true"></i> Home — Art Education', href: 'home2.html', key: 'home2' },
+    { label: '<i class="fa-solid fa-heart" aria-hidden="true"></i> About Us', href: 'about.html', key: 'about' },
+    { label: '<i class="fa-solid fa-paintbrush" aria-hidden="true"></i> Services', href: 'services.html', key: 'services' },
+    { label: '<i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Service Details', href: 'service-details.html', key: 'service-details' },
+    { label: '<i class="fa-solid fa-book-open" aria-hidden="true"></i> Blog', href: 'blog.html', key: 'blog' },
+    { label: '<i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Blog Details', href: 'blog-details.html', key: 'blog-details' },
+    { label: '<i class="fa-solid fa-phone" aria-hidden="true"></i> Contact Us', href: 'contact.html', key: 'contact' },
+    { label: '<i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> Pricing', href: 'pricing.html', key: 'pricing' },
+    { label: '<i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register', href: 'login.html', key: 'login' },
+    { label: '<i class="fa-solid fa-wrench" aria-hidden="true"></i> Maintenance', href: 'maintenance.html', key: 'maintenance' },
+    { label: '<i class="fa-solid fa-map" aria-hidden="true"></i> Sitemap', href: 'sitemap.html', key: 'sitemap' },
+    { label: '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 404 Page', href: '404.html', key: '404' },
+    { label: '<i class="fa-solid fa-rocket" aria-hidden="true"></i> Coming Soon', href: 'coming-soon.html', key: 'coming-soon' },
   ].map(l => `<a href="${siteLink(l.href)}" class="mobile-nav-link ${activePage === l.key ? 'active' : ''}">${l.label}</a>`).join('');
 
   return `
 <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
   <div class="container navbar-inner">
     <a href="${siteLink('index.html')}" class="navbar-logo" aria-label="Little Splatters Home — Where Every Child Creates">
-      <div class="navbar-logo-icon" aria-hidden="true">🎨</div>
+      <div class="navbar-logo-icon" aria-hidden="true"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
       <div class="navbar-logo-stack">
         <div class="navbar-logo-text">Little <span>Splatters</span></div>
         <small class="navbar-tagline">Where Every Child Creates</small>
@@ -97,10 +97,10 @@ function getNavbarHTML(activePage = '') {
     </ul>
 
     <div class="navbar-controls">
-      <button class="navbar-btn-icon" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle dark mode">🌙</button>
+      <button class="navbar-btn-icon" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
       <button class="navbar-btn-icon" data-dir-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction" style="font-size:0.75rem;font-weight:700;">RTL</button>
       <a href="${siteLink('login.html')}" class="btn btn-primary btn-sm" style="display:none;" id="nav-login-btn" aria-label="Login or Register">Login</a>
-      <button class="navbar-menu-toggle" id="navbar-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">☰</button>
+      <button class="navbar-menu-toggle" id="navbar-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </div>
 </nav>
@@ -109,22 +109,22 @@ function getNavbarHTML(activePage = '') {
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
     <a href="${siteLink('index.html')}" class="navbar-logo" aria-label="Little Splatters Home — Where Every Child Creates">
-      <div class="navbar-logo-icon">🎨</div>
+      <div class="navbar-logo-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
       <div class="navbar-logo-stack">
         <div class="navbar-logo-text">Little <span>Splatters</span></div>
         <small class="navbar-tagline">Where Every Child Creates</small>
       </div>
     </a>
-    <button class="navbar-btn-icon" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <button class="navbar-btn-icon" id="mobile-menu-close" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
   </div>
   <nav class="mobile-nav" role="menubar">
     ${mobileLinks}
   </nav>
   <div class="mobile-menu-footer">
-    <a href="${siteLink('contact.html')}" class="btn btn-primary w-100" style="justify-content:center;">📞 Book a Trial Class</a>
-    <a href="${siteLink('login.html')}" class="btn btn-outline w-100" style="justify-content:center;">🔐 Login / Register</a>
+    <a href="${siteLink('contact.html')}" class="btn btn-primary w-100" style="justify-content:center;"><i class="fa-solid fa-phone" aria-hidden="true"></i> Book a Trial Class</a>
+    <a href="${siteLink('login.html')}" class="btn btn-outline w-100" style="justify-content:center;"><i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register</a>
     <div style="display:flex;gap:12px;justify-content:center;margin-top:8px;">
-      <button class="navbar-btn-icon" data-theme-toggle aria-label="Toggle theme">🌙</button>
+      <button class="navbar-btn-icon" data-theme-toggle aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
       <button class="navbar-btn-icon" data-dir-toggle aria-label="Toggle direction" style="font-size:0.75rem;font-weight:700;">RTL</button>
     </div>
   </div>
@@ -143,19 +143,19 @@ function getFooterHTML() {
       <!-- Brand -->
       <div class="footer-brand">
         <a href="${siteLink('index.html')}" class="navbar-logo" style="margin-bottom:16px;display:inline-flex;" aria-label="Little Splatters Home — Where Every Child Creates">
-          <div class="navbar-logo-icon">🎨</div>
+          <div class="navbar-logo-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
           <div class="navbar-logo-stack">
             <div class="navbar-logo-text">Little <span>Splatters</span></div>
             <small class="navbar-tagline" style="color:var(--sunshine-yellow);">Where Every Child Creates</small>
           </div>
         </a>
-        <span class="footer-tagline">Where Every Child Creates 🎨</span>
+        <span class="footer-tagline">Where Every Child Creates <i class="fa-solid fa-palette" aria-hidden="true"></i></span>
         <p>A premium children's art & painting studio where creativity blooms and young artists discover the joy of expression through color, form, and imagination.</p>
         <div class="footer-social">
-          <a href="#" class="footer-social-link" aria-label="Facebook">📘</a>
-          <a href="#" class="footer-social-link" aria-label="Instagram">📸</a>
-          <a href="#" class="footer-social-link" aria-label="YouTube">▶️</a>
-          <a href="#" class="footer-social-link" aria-label="Pinterest">📌</a>
+          <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+          <a href="#" class="footer-social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -163,13 +163,13 @@ function getFooterHTML() {
       <div class="footer-col">
         <h5>Quick Links</h5>
         <ul class="footer-links">
-          <li><a href="${siteLink('index.html')}" class="footer-link">🏠 Home — General</a></li>
-          <li><a href="${siteLink('home2.html')}" class="footer-link">🎨 Home — Art Ed.</a></li>
-          <li><a href="${siteLink('about.html')}" class="footer-link">💛 About Us</a></li>
-          <li><a href="${siteLink('services.html')}" class="footer-link">🖌️ Services</a></li>
-          <li><a href="${siteLink('pricing.html')}" class="footer-link">💰 Pricing</a></li>
-          <li><a href="${siteLink('blog.html')}" class="footer-link">📖 Blog</a></li>
-          <li><a href="${siteLink('contact.html')}" class="footer-link">📞 Contact</a></li>
+          <li><a href="${siteLink('index.html')}" class="footer-link"><i class="fa-solid fa-house" aria-hidden="true"></i> Home — General</a></li>
+          <li><a href="${siteLink('home2.html')}" class="footer-link"><i class="fa-solid fa-palette" aria-hidden="true"></i> Home — Art Ed.</a></li>
+          <li><a href="${siteLink('about.html')}" class="footer-link"><i class="fa-solid fa-heart" aria-hidden="true"></i> About Us</a></li>
+          <li><a href="${siteLink('services.html')}" class="footer-link"><i class="fa-solid fa-paintbrush" aria-hidden="true"></i> Services</a></li>
+          <li><a href="${siteLink('pricing.html')}" class="footer-link"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> Pricing</a></li>
+          <li><a href="${siteLink('blog.html')}" class="footer-link"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Blog</a></li>
+          <li><a href="${siteLink('contact.html')}" class="footer-link"><i class="fa-solid fa-phone" aria-hidden="true"></i> Contact</a></li>
         </ul>
       </div>
 
@@ -177,13 +177,13 @@ function getFooterHTML() {
       <div class="footer-col">
         <h5>More Pages</h5>
         <ul class="footer-links">
-          <li><a href="${siteLink('service-details.html')}" class="footer-link">🎭 Service Details</a></li>
-          <li><a href="${siteLink('blog-details.html')}" class="footer-link">📝 Blog Details</a></li>
-          <li><a href="${siteLink('login.html')}" class="footer-link">🔐 Login / Register</a></li>
-          <li><a href="${siteLink('maintenance.html')}" class="footer-link">🔧 Maintenance</a></li>
-          <li><a href="${siteLink('sitemap.html')}" class="footer-link">🗺️ Sitemap</a></li>
-          <li><a href="${siteLink('404.html')}" class="footer-link">🔍 404 Page</a></li>
-          <li><a href="${siteLink('coming-soon.html')}" class="footer-link">🚀 Coming Soon</a></li>
+          <li><a href="${siteLink('service-details.html')}" class="footer-link"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Service Details</a></li>
+          <li><a href="${siteLink('blog-details.html')}" class="footer-link"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Blog Details</a></li>
+          <li><a href="${siteLink('login.html')}" class="footer-link"><i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register</a></li>
+          <li><a href="${siteLink('maintenance.html')}" class="footer-link"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Maintenance</a></li>
+          <li><a href="${siteLink('sitemap.html')}" class="footer-link"><i class="fa-solid fa-map" aria-hidden="true"></i> Sitemap</a></li>
+          <li><a href="${siteLink('404.html')}" class="footer-link"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 404 Page</a></li>
+          <li><a href="${siteLink('coming-soon.html')}" class="footer-link"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Coming Soon</a></li>
         </ul>
       </div>
 
@@ -191,15 +191,15 @@ function getFooterHTML() {
       <div class="footer-col">
         <h5>Get In Touch</h5>
         <div class="footer-contact-item">
-          <div class="footer-contact-icon">📍</div>
+          <div class="footer-contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
           <p>42 Paintbrush Lane,<br>Creative Quarter, AR 10025</p>
         </div>
         <div class="footer-contact-item">
-          <div class="footer-contact-icon">📞</div>
+          <div class="footer-contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
           <p>+1 (555) 287-ARTS<br>Mon–Sat 9am–7pm</p>
         </div>
         <div class="footer-contact-item">
-          <div class="footer-contact-icon">✉️</div>
+          <div class="footer-contact-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
           <p>hello@littlesplatters.com</p>
         </div>
       </div>
@@ -223,7 +223,7 @@ function getFooterHTML() {
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
   <div class="lightbox-content">
     <img src="" alt="Artwork preview" id="lightbox-img">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">✕</button>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
   </div>
 </div>
 

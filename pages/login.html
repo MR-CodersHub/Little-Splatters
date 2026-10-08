@@ -5,7 +5,7 @@
   <meta name="slogan" content="Where Every Child Creates">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Login or Register for a Little Splatters parent account — manage your child's art class bookings, view portfolios, and access progress reports.">
-  <title>Login & Register | Little Splatters � Where Every Child Creates</title>
+  <title>Login & Register | Little Splatters � Where Every Child Creates</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../favicon.svg">
   <meta name="theme-color" content="#F07C72">
@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/pages.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body data-page="login">
 
@@ -31,13 +32,13 @@
       </div>
       <div class="container text-center" data-reveal>
         <a href="../index.html" class="navbar-logo" style="display:inline-flex;margin-bottom:32px;" aria-label="Little Splatters Home — Where Every Child Creates">
-          <div class="navbar-logo-icon" style="width:56px;height:56px;font-size:1.8rem;">🎨</div>
+          <div class="navbar-logo-icon" style="width:56px;height:56px;font-size:1.8rem;"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
           <div class="navbar-logo-stack">
             <div class="navbar-logo-text" style="font-size:1.8rem;">Little <span>Splatters</span></div>
             <small class="navbar-tagline" style="color:var(--sunshine-yellow);">Where Every Child Creates</small>
           </div>
         </a>
-        <div class="section-label" style="background:rgba(255,248,234,0.15);color:var(--sunshine-yellow);margin:0 auto 20px;display:inline-flex;">🔐 Parent Account</div>
+        <div class="section-label" style="background:rgba(255,248,234,0.15);color:var(--sunshine-yellow);margin:0 auto 20px;display:inline-flex;"><i class="fa-solid fa-lock" aria-hidden="true"></i> Parent Account</div>
         <h1 id="auth-h1">Your Child's Creative World,<br><span style="color:var(--sunshine-yellow);">In Your Hands</span></h1>
         <p style="max-width:560px;margin:16px auto 0;font-size:1.05rem;">Log in or create a parent account to manage class bookings, track your child's artistic development, and access their digital portfolio.</p>
       </div>
@@ -56,7 +57,7 @@
           <!-- LOGIN -->
           <div class="auth-card" id="login-card">
             <div class="auth-card-header">
-              <div class="auth-icon" style="background:var(--coral-light);">🔑</div>
+              <div class="auth-icon" style="background:var(--coral-light);"><i class="fa-solid fa-key" aria-hidden="true"></i></div>
               <h2 style="font-size:1.6rem;">Welcome Back</h2>
               <p style="font-size:0.9rem;color:var(--text-muted);">Sign in to your parent account</p>
             </div>
@@ -82,17 +83,17 @@
                 <label for="remember-me" style="font-size:0.85rem;color:var(--text-secondary);">Keep me signed in</label>
               </div>
               <button type="submit" class="btn btn-primary w-100" style="justify-content:center;" id="login-submit-btn">
-                🔑 Sign In to My Account
+                <i class="fa-solid fa-key" aria-hidden="true"></i> Sign In to My Account
               </button>
             </form>
 
             <div class="auth-divider">or continue with</div>
             <div style="display:flex;gap:12px;">
               <button class="btn btn-outline w-100" style="justify-content:center;gap:8px;" id="google-login-btn">
-                <span>🔵</span> Google
+                <span><i class="fa-brands fa-google" aria-hidden="true"></i></span> Google
               </button>
               <button class="btn btn-outline w-100" style="justify-content:center;gap:8px;" id="fb-login-btn">
-                <span>📘</span> Facebook
+                <span><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span> Facebook
               </button>
             </div>
 
@@ -104,7 +105,7 @@
           <!-- REGISTER -->
           <div class="auth-card" id="register-card">
             <div class="auth-card-header">
-              <div class="auth-icon" style="background:var(--mint-light);">👨‍👩‍👧</div>
+              <div class="auth-icon" style="background:var(--mint-light);"><i class="fa-brands fa-user" aria-hidden="true"></i>‍<i class="fa-brands fa-user" aria-hidden="true"></i>‍<i class="fa-solid fa-child-dress" aria-hidden="true"></i></div>
               <h2 style="font-size:1.6rem;">Create a Parent Account</h2>
               <p style="font-size:0.9rem;color:var(--text-muted);">Join the Little Splatters family today</p>
             </div>
@@ -157,7 +158,7 @@
                 </label>
               </div>
               <button type="submit" class="btn btn-primary w-100" style="justify-content:center;" id="register-submit-btn">
-                🌟 Create My Parent Account
+                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Create My Parent Account
               </button>
             </form>
 
@@ -175,49 +176,49 @@
     <section class="section" id="account-benefits" aria-labelledby="benefits-h2">
       <div class="container">
         <div class="section-header text-center" data-reveal>
-          <div class="section-label yellow">✨ Account Benefits</div>
+          <div class="section-label yellow"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Account Benefits</div>
           <h2 id="benefits-h2">Everything in One <span>Parent Portal</span></h2>
           <p>Your Little Splatters parent account gives you a beautiful, easy-to-use portal to manage everything about your child's creative education.</p>
         </div>
 
         <div class="benefits-grid" data-reveal>
           <div class="benefit-card">
-            <div class="benefit-icon" style="background:var(--coral-light);">📅</div>
+            <div class="benefit-icon" style="background:var(--coral-light);"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></div>
             <div>
               <h5>Easy Class Booking</h5>
               <p style="font-size:0.82rem;color:var(--text-muted);">Book, reschedule, or cancel classes with ease. See real-time availability and manage your schedule all in one place.</p>
             </div>
           </div>
           <div class="benefit-card">
-            <div class="benefit-icon" style="background:var(--blue-light);">🖼️</div>
+            <div class="benefit-icon" style="background:var(--blue-light);"><i class="fa-solid fa-image" aria-hidden="true"></i></div>
             <div>
               <h5>Digital Art Portfolio</h5>
               <p style="font-size:0.82rem;color:var(--text-muted);">Access your child's growing digital portfolio — every artwork photographed and archived so nothing is ever lost.</p>
             </div>
           </div>
           <div class="benefit-card">
-            <div class="benefit-icon" style="background:var(--yellow-light);">📊</div>
+            <div class="benefit-icon" style="background:var(--yellow-light);"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></div>
             <div>
               <h5>Progress Reports</h5>
               <p style="font-size:0.82rem;color:var(--text-muted);">Read detailed termly progress reports from your child's instructor — tracking growth, skills, and personal development.</p>
             </div>
           </div>
           <div class="benefit-card">
-            <div class="benefit-icon" style="background:var(--mint-light);">💬</div>
+            <div class="benefit-icon" style="background:var(--mint-light);"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
             <div>
               <h5>Message Instructors</h5>
               <p style="font-size:0.82rem;color:var(--text-muted);">Send direct messages to your child's instructor with questions, feedback, or updates about your child's needs.</p>
             </div>
           </div>
           <div class="benefit-card">
-            <div class="benefit-icon" style="background:var(--coral-light);">💰</div>
+            <div class="benefit-icon" style="background:var(--coral-light);"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></div>
             <div>
               <h5>Billing Management</h5>
               <p style="font-size:0.82rem;color:var(--text-muted);">View invoices, manage payment methods, and upgrade or change your membership plan at any time.</p>
             </div>
           </div>
           <div class="benefit-card">
-            <div class="benefit-icon" style="background:var(--blue-light);">🎪</div>
+            <div class="benefit-icon" style="background:var(--blue-light);"><i class="fa-solid fa-tent" aria-hidden="true"></i></div>
             <div>
               <h5>Workshop Priority Access</h5>
               <p style="font-size:0.82rem;color:var(--text-muted);">Account holders get 48-hour priority access to holiday workshops and special event bookings before public release.</p>
@@ -233,7 +234,7 @@
     <section class="section" style="background:var(--bg-secondary);" id="account-help" aria-labelledby="help-h2">
       <div class="container">
         <div class="section-header text-center" data-reveal>
-          <div class="section-label blue">❓ Account Help</div>
+          <div class="section-label blue"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> Account Help</div>
           <h2 id="help-h2">Frequently Asked <span>Account Questions</span></h2>
         </div>
 
@@ -289,22 +290,22 @@
           <!-- Support -->
           <div class="cta-banner" style="background:linear-gradient(135deg,var(--ink-plum),#4A3858);">
             <div style="position:relative;z-index:1;">
-              <div style="font-size:2.5rem;margin-bottom:12px;">🛟</div>
+              <div style="font-size:2.5rem;margin-bottom:12px;"><i class="fa-solid fa-life-ring" aria-hidden="true"></i></div>
               <h2 id="support-h2" style="font-size:1.8rem;">Need Help with Your Account?</h2>
               <p style="margin-bottom:24px;">Our friendly support team is available Monday to Saturday, 9am–5pm. We're always happy to help!</p>
               <div style="display:flex;flex-direction:column;gap:12px;">
-                <a href="tel:+15552872787" class="btn btn-outline-white" id="support-call-btn">📞 Call +1 (555) 287-ARTS</a>
-                <a href="mailto:hello@littlesplatters.com" class="btn btn-primary" id="support-email-btn">✉️ Email Us</a>
+                <a href="tel:+15552872787" class="btn btn-outline-white" id="support-call-btn"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call +1 (555) 287-ARTS</a>
+                <a href="mailto:hello@littlesplatters.com" class="btn btn-primary" id="support-email-btn"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email Us</a>
               </div>
             </div>
           </div>
           <!-- Trial CTA -->
           <div class="cta-banner" style="background:linear-gradient(135deg,var(--coral-pink),var(--sunshine-yellow));">
             <div style="position:relative;z-index:1;">
-              <div style="font-size:2.5rem;margin-bottom:12px;">🎨</div>
+              <div style="font-size:2.5rem;margin-bottom:12px;"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
               <h2 style="font-size:1.8rem;color:var(--ink-plum);">Not Enrolled Yet?</h2>
               <p style="color:rgba(51,38,61,0.8);margin-bottom:24px;">Book your child's free trial class and experience Little Splatters before creating an account.</p>
-              <a href="contact.html" class="btn btn-secondary btn-lg" id="login-trial-cta">📅 Book Free Trial Class</a>
+              <a href="contact.html" class="btn btn-secondary btn-lg" id="login-trial-cta"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Book Free Trial Class</a>
             </div>
           </div>
         </div>

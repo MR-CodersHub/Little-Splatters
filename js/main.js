@@ -38,7 +38,7 @@ const ThemeManager = {
     document.documentElement.setAttribute('data-theme', theme);
     $$('[data-theme-toggle]').forEach(btn => {
       btn.title = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
-      btn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+      btn.innerHTML = theme === 'dark' ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>' : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
     });
     storage.set(this.STORAGE_KEY, theme);
   },
@@ -322,7 +322,7 @@ const Toast = {
   },
 
   show(type = 'info', title = '', message = '', duration = 4000) {
-    const icons = { success: '✓', error: '✕', info: 'ℹ' };
+    const icons = { success: '<i class="fa-solid fa-check" aria-hidden="true"></i>', error: '<i class="fa-solid fa-xmark" aria-hidden="true"></i>', info: '<i class="fa-solid fa-info" aria-hidden="true"></i>' };
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
     toast.innerHTML = `
@@ -411,14 +411,14 @@ const TrialForm = {
     FormValidator.initForm(form, (f) => {
       const btn = f.querySelector('[type="submit"]');
       const originalText = btn.innerHTML;
-      btn.innerHTML = '⏳ Sending...';
+      btn.innerHTML = 'Sending...';
       btn.disabled = true;
 
       setTimeout(() => {
         f.reset();
         btn.innerHTML = originalText;
         btn.disabled = false;
-        Toast.success('Booking Request Sent! 🎨', 'We\'ll contact you within 24 hours to confirm your trial class.');
+        Toast.success('Booking Request Sent!', 'We\'ll contact you within 24 hours to confirm your trial class.');
         const successMsg = $('#booking-success');
         if (successMsg) {
           successMsg.style.display = 'block';
@@ -440,14 +440,14 @@ const ContactForm = {
     FormValidator.initForm(form, (f) => {
       const btn = f.querySelector('[type="submit"]');
       const originalText = btn.innerHTML;
-      btn.innerHTML = '⏳ Sending...';
+      btn.innerHTML = 'Sending...';
       btn.disabled = true;
 
       setTimeout(() => {
         f.reset();
         btn.innerHTML = originalText;
         btn.disabled = false;
-        Toast.success('Message Sent! 🎉', 'We\'ll get back to you within 24 hours.');
+        Toast.success('Message Sent!', 'We\'ll get back to you within 24 hours.');
       }, 1500);
     });
   }
@@ -463,7 +463,7 @@ const AuthForms = {
 
     if (loginForm) {
       FormValidator.initForm(loginForm, () => {
-        Toast.success('Welcome Back! 🎨', 'You\'ve been logged in successfully.');
+        Toast.success('Welcome Back!', 'You\'ve been logged in successfully.');
         setTimeout(() => {
           const inPages = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
           window.location.href = inPages ? '../index.html' : 'index.html';
@@ -473,7 +473,7 @@ const AuthForms = {
 
     if (registerForm) {
       FormValidator.initForm(registerForm, () => {
-        Toast.success('Account Created! 🌟', 'Welcome to Little Splatters! Check your email to verify.');
+        Toast.success('Account Created!', 'Welcome to Little Splatters! Check your email to verify.');
         setTimeout(() => { registerForm.reset(); }, 2000);
       });
     }
@@ -498,7 +498,7 @@ const Newsletter = {
           return;
         }
         emailInput.value = '';
-        Toast.success('Subscribed! 🎉', 'You\'ll receive our latest art tips and class updates.');
+        Toast.success('Subscribed!', 'You\'ll receive our latest art tips and class updates.');
       });
     });
   }
@@ -609,7 +609,7 @@ const ComingSoonForm = {
       const input = form.querySelector('input[type="email"]');
       if (input && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
         input.value = '';
-        Toast.success('You\'re on the list! 🎨', 'We\'ll notify you when we launch.');
+        Toast.success('You\'re on the list!', 'We\'ll notify you when we launch.');
       } else {
         Toast.error('Invalid email', 'Please enter a valid email address.');
       }
@@ -695,5 +695,5 @@ document.addEventListener('DOMContentLoaded', () => {
   FloatingBadges.init();
 
   // Log init
-  console.log('%c🎨 Little Splatters — Kids Art Studio', 'color: #F07C72; font-size: 16px; font-weight: bold;');
+  console.log('%cLittle Splatters — Kids Art Studio', 'color: #F07C72; font-size: 16px; font-weight: bold;');
 });
