@@ -2104,6 +2104,26 @@
     padding: 20px 16px;
   }
 
+  /* Auth forms fit 320px: roomier tap targets, no iOS zoom, no squeeze */
+  .auth-card {
+    padding: 24px 16px;
+  }
+
+  .auth-card .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .auth-card .form-control {
+    font-size: 16px;
+  }
+
+  .auth-card .form-label {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
   .studio-experience-grid {
     margin-top: 40px;
   }
