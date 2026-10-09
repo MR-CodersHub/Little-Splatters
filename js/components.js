@@ -61,15 +61,11 @@ function getNavbarHTML(activePage = '') {
     { label: '<i class="fa-solid fa-palette" aria-hidden="true"></i> Home — Art Education', href: 'home2.html', key: 'home2' },
     { label: '<i class="fa-solid fa-heart" aria-hidden="true"></i> About Us', href: 'about.html', key: 'about' },
     { label: '<i class="fa-solid fa-paintbrush" aria-hidden="true"></i> Services', href: 'services.html', key: 'services' },
-    { label: '<i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Service Details', href: 'service-details.html', key: 'service-details' },
     { label: '<i class="fa-solid fa-book-open" aria-hidden="true"></i> Blog', href: 'blog.html', key: 'blog' },
-    { label: '<i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Blog Details', href: 'blog-details.html', key: 'blog-details' },
     { label: '<i class="fa-solid fa-phone" aria-hidden="true"></i> Contact Us', href: 'contact.html', key: 'contact' },
     { label: '<i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> Pricing', href: 'pricing.html', key: 'pricing' },
     { label: '<i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register', href: 'login.html', key: 'login' },
-    { label: '<i class="fa-solid fa-wrench" aria-hidden="true"></i> Maintenance', href: 'maintenance.html', key: 'maintenance' },
     { label: '<i class="fa-solid fa-map" aria-hidden="true"></i> Sitemap', href: 'sitemap.html', key: 'sitemap' },
-    { label: '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 404 Page', href: '404.html', key: '404' },
   ].map(l => `<a href="${siteLink(l.href)}" class="mobile-nav-link ${activePage === l.key ? 'active' : ''}">${l.label}</a>`).join('');
 
   return `
@@ -114,10 +110,6 @@ function getNavbarHTML(activePage = '') {
   <div class="mobile-menu-footer">
     <a href="${siteLink('contact.html')}" class="btn btn-primary w-100" style="justify-content:center;"><i class="fa-solid fa-phone" aria-hidden="true"></i> Book a Trial Class</a>
     <a href="${siteLink('login.html')}" class="btn btn-outline w-100" style="justify-content:center;"><i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register</a>
-    <div style="display:flex;gap:12px;justify-content:center;margin-top:8px;">
-      <button class="navbar-btn-icon" data-theme-toggle aria-label="Toggle theme"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
-      <button class="navbar-btn-icon" data-dir-toggle aria-label="Toggle direction" style="font-size:0.75rem;font-weight:700;">RTL</button>
-    </div>
   </div>
 </div>
 `;

@@ -1836,6 +1836,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .services-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .age-group-cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1860,6 +1864,12 @@
     grid-template-columns: 1fr;
   }
 
+  /* Inline 2-col splits (login, blog, contact, service pages) stack on tablet */
+  .responsive-2col {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
   .error-shortcuts {
     grid-template-columns: 1fr;
   }
@@ -1874,6 +1884,53 @@
 
   .studio-experience-img {
     max-height: 320px;
+  }
+
+  /* Kill the stacked header gap on mobile (navbar offset + hero padding) */
+  .home1-hero,
+  .home2-hero,
+  .about-hero,
+  .services-hero,
+  .blog-hero,
+  .auth-hero,
+  .service-detail-hero,
+  .blog-detail-hero,
+  .contact-hero,
+  .pricing-hero,
+  .auth-hero,
+  .error-hero {
+    padding-top: 40px;
+  }
+
+  /* Home1 hero stacks cleanly on tablet and below */
+  .home1-hero {
+    padding: 100px 0 60px;
+    min-height: auto;
+  }
+
+  .home1-hero-content {
+    gap: 48px;
+  }
+
+  .hero-main-img {
+    aspect-ratio: 4/5;
+    max-height: 520px;
+  }
+
+  /* Floating badges stay inside the card on small screens */
+  .float-badge {
+    padding: 10px 14px;
+    max-width: calc(100% - 32px);
+  }
+
+  .hero-float-1 {
+    top: -12px;
+    right: 8px;
+  }
+
+  .hero-float-2 {
+    bottom: 16px;
+    left: 8px;
   }
   .services-showcase,
   .philosophy-cards,
@@ -1943,6 +2000,36 @@
     grid-template-columns: 1fr;
   }
 
+  /* Home1 hero compacts for phones */
+  .home1-hero {
+    padding: 90px 0 48px;
+  }
+
+  .home1-hero-content {
+    gap: 36px;
+  }
+
+  .hero-actions .btn-lg {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home1-hero-text p {
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    margin-bottom: 32px;
+  }
+
+  .hero-stats {
+    gap: 20px;
+  }
+
+  .hero-stat-num {
+    font-size: 1.6rem;
+  }
+
   .mini-service-card {
     flex-direction: column;
   }
@@ -1953,6 +2040,73 @@
   }
 
   .error-404-num { font-size: 7rem; }
+}
+
+/* Very small phones (320–360px): single-column everything, compact type */
+@media (max-width: 360px) {
+  .home1-hero {
+    padding: 80px 0 40px;
+  }
+
+  .home1-hero-text p {
+    font-size: 0.98rem;
+  }
+
+  .hero-stats {
+    gap: 14px;
+  }
+
+  .hero-stat-num {
+    font-size: 1.4rem;
+  }
+
+  .hero-stat-label {
+    font-size: 0.72rem;
+  }
+
+  .hero-main-img {
+    aspect-ratio: 1/1;
+    max-height: 340px;
+  }
+
+  .float-badge {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .float-badge .icon {
+    font-size: 1.1rem;
+  }
+
+  .float-badge .label {
+    font-size: 0.72rem;
+  }
+
+  .float-badge .sub {
+    font-size: 0.62rem;
+  }
+
+  /* Gallery goes single-column so artwork stays readable */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-filters {
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+
+  .why-choose-grid {
+    gap: 32px;
+  }
+
+  .trial-form {
+    padding: 20px 16px;
+  }
+
+  .studio-experience-grid {
+    margin-top: 40px;
+  }
 }
 
 /* ============================================================

@@ -105,6 +105,8 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -2192,6 +2194,9 @@ select.form-control {
   .navbar-nav { display: none; }
   .navbar-menu-toggle { display: flex; }
 
+  /* Login lives in the mobile menu on tablet/mobile */
+  #nav-login-btn { display: none !important; }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -2209,8 +2214,8 @@ select.form-control {
 /* Mobile: ≤ 768px */
 @media (max-width: 768px) {
   :root {
-    --section-gap: 60px;
-    --section-gap-sm: 40px;
+    --section-gap: 48px;
+    --section-gap-sm: 32px;
     --container-pad: 16px;
   }
 
@@ -2239,8 +2244,22 @@ select.form-control {
 
   .process-steps { grid-template-columns: 1fr; }
 
-  h1 { font-size: 2.4rem; }
-  h2 { font-size: 1.8rem; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+
+  .btn-lg {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  .section-header,
+  .section-header.text-center {
+    margin-bottom: 36px;
+  }
+
+  .section-header p {
+    font-size: 0.95rem;
+  }
 
   .newsletter-form {
     flex-direction: column;
@@ -2274,7 +2293,174 @@ select.form-control {
   .grid-4 { grid-template-columns: 1fr; }
   .cta-banner-actions { flex-direction: column; align-items: center; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
-  h1 { font-size: 2rem; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; }
+
+  /* Navbar fits 375–480px widths */
+  .navbar-inner {
+    gap: 8px;
+  }
+
+  .navbar-logo {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .navbar-logo-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .navbar-logo-text {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .navbar-logo-stack .navbar-tagline {
+    display: none;
+  }
+
+  .navbar-controls {
+    gap: 6px;
+  }
+
+  .navbar-btn-icon,
+  .navbar-menu-toggle {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .section-header,
+  .section-header.text-center {
+    margin-bottom: 28px;
+  }
+}
+
+/* Very small phones: ≤ 360px (covers 320px) */
+@media (max-width: 360px) {
+  :root {
+    --container-pad: 12px;
+    --section-gap: 48px;
+    --section-gap-sm: 32px;
+    --navbar-height: 60px;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.3rem; }
+
+  .btn-lg {
+    padding: 12px 20px;
+    font-size: 0.88rem;
+  }
+
+  .stats-grid {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 20px 8px;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .service-card-body,
+  .testimonial-card,
+  .trial-form .form-control {
+    font-size: 0.9rem;
+  }
+
+  .service-card-body {
+    padding: 20px;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .process-card {
+    padding: 24px 16px;
+  }
+
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 0.78rem;
+  }
+
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  /* Footer newsletter form must shrink below its 280px desktop minimum */
+  .footer-newsletter {
+    padding: 20px 16px;
+  }
+
+  .footer-newsletter-form {
+    min-width: 0;
+  }
+
+  .toast-container {
+    left: 12px;
+    right: 12px;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Navbar compacts for 320px widths */
+  .navbar-inner {
+    gap: 6px;
+  }
+
+  .navbar-logo {
+    gap: 6px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .navbar-logo-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .navbar-logo-text {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navbar-logo-stack .navbar-tagline {
+    display: block;
+    font-size: 0.45rem;
+    letter-spacing: 0.04em;
+  }
+
+  .navbar-controls {
+    gap: 6px;
+  }
+
+  .navbar-btn-icon,
+  .navbar-menu-toggle {
+    width: 30px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
 }
 
 /* ============================================================
@@ -2413,6 +2599,12 @@ select.form-control {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 14px var(--container-pad);
+}
+
+@media (max-width: 360px) {
+  .minimal-topbar-inner {
+    padding: 10px var(--container-pad);
+  }
 }
 
 /* Standalone pages have no fixed navbar, so drop the reserved top offset */
