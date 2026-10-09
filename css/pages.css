@@ -15,7 +15,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding: 120px 0 80px;
+  padding: 48px 0 80px;
 }
 
 [data-theme="dark"] .home1-hero {
@@ -2005,6 +2005,11 @@
     padding: 90px 0 48px;
   }
 
+  /* Home1 hero compacts for phones */
+  .home1-hero {
+    padding: 56px 0 48px;
+  }
+
   .home1-hero-content {
     gap: 36px;
   }
@@ -2045,7 +2050,7 @@
 /* Very small phones (320–360px): single-column everything, compact type */
 @media (max-width: 360px) {
   .home1-hero {
-    padding: 80px 0 40px;
+    padding: 48px 0 40px;
   }
 
   .home1-hero-text p {

@@ -105,7 +105,6 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
   overflow-x: clip;
 }
 
@@ -116,7 +115,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img {
@@ -2217,6 +2216,7 @@ select.form-control {
     --section-gap: 48px;
     --section-gap-sm: 32px;
     --container-pad: 16px;
+    --navbar-height: 64px;
   }
 
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
@@ -2319,7 +2319,9 @@ select.form-control {
   }
 
   .navbar-logo-stack .navbar-tagline {
-    display: none;
+    display: block;
+    font-size: 0.5rem;
+    letter-spacing: 0.06em;
   }
 
   .navbar-controls {
