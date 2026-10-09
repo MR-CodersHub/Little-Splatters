@@ -2135,6 +2135,144 @@
 }
 
 /* ============================================================
+   HERO PHOTO BACKGROUNDS (with readability overlays)
+   Gradients underneath act as fallback if a photo fails to load.
+   ============================================================ */
+.home1-hero,
+.services-hero,
+.home2-hero,
+.about-hero,
+.service-detail-hero,
+.blog-hero,
+.blog-detail-hero,
+.pricing-hero,
+.contact-hero,
+.error-hero,
+.auth-hero {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.home1-hero > .container,
+.services-hero > .container,
+.home2-hero > .container,
+.about-hero > .container,
+.service-detail-hero > .container,
+.blog-hero > .container,
+.blog-detail-hero > .container,
+.pricing-hero > .container,
+.contact-hero > .container,
+.error-hero > .container,
+.auth-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft overlay keeps headings readable over photos */
+.home1-hero::after,
+.services-hero::after,
+.home2-hero::after,
+.about-hero::after,
+.service-detail-hero::after,
+.blog-hero::after,
+.blog-detail-hero::after,
+.pricing-hero::after,
+.contact-hero::after,
+.error-hero::after,
+.auth-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,248,234,0.93) 0%, rgba(253,236,234,0.90) 50%, rgba(216,238,248,0.90) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+[data-theme="dark"] .home1-hero::after,
+[data-theme="dark"] .services-hero::after,
+[data-theme="dark"] .home2-hero::after,
+[data-theme="dark"] .about-hero::after,
+[data-theme="dark"] .service-detail-hero::after,
+[data-theme="dark"] .blog-hero::after,
+[data-theme="dark"] .blog-detail-hero::after,
+[data-theme="dark"] .pricing-hero::after,
+[data-theme="dark"] .contact-hero::after,
+[data-theme="dark"] .error-hero::after,
+[data-theme="dark"] .auth-hero::after {
+  background: linear-gradient(135deg, rgba(30,22,37,0.94) 0%, rgba(42,31,53,0.92) 100%);
+}
+
+/* Decorative blobs clash with photos — hide them on photo heroes */
+.home1-hero .hero-bg-shapes,
+.services-hero .hero-bg-shapes,
+.home2-hero .hero-bg-shapes,
+.about-hero .hero-bg-shapes,
+.service-detail-hero .hero-bg-shapes,
+.blog-hero .hero-bg-shapes,
+.blog-detail-hero .hero-bg-shapes,
+.contact-hero .hero-bg-shapes,
+.pricing-hero .hero-bg-shapes,
+.auth-hero .hero-bg-shapes,
+.error-hero .hero-bg-shapes {
+  display: none;
+}
+
+/* --- Per-page photo --- */
+.home1-hero { background-image: url('https://i.pinimg.com/1200x/30/42/22/304222633a93b2f4f678ffa1340bdee2.jpg'); }
+.services-hero { background-image: url('https://i.pinimg.com/1200x/0b/39/1c/0b391cba9c3ac84246d5f6eeb2697fe3.jpg'); }
+.home2-hero { background-image: url('https://i.pinimg.com/736x/9d/28/d5/9d28d52d820dd9cc59724a0103a5ff5b.jpg'); }
+.about-hero { background-image: url('https://i.pinimg.com/736x/9c/af/e5/9cafe5ea148f8b1c4f5ad676d190826e.jpg'); }
+.service-detail-hero { background-image: url('https://i.pinimg.com/1200x/46/db/ec/46dbec5f74b03818d572d226da1cd928.jpg'); }
+.blog-hero { background-image: url('https://i.pinimg.com/1200x/a2/17/d3/a217d310ccdbb608b0a294417594dcc2.jpg'); }
+.blog-detail-hero { background-image: url('https://i.pinimg.com/736x/c5/f8/ea/c5f8eacd04ec7c7e5d0eda13ee672da4.jpg'); }
+.pricing-hero { background-image: url('https://i.pinimg.com/1200x/04/34/71/043471bd3eedd04a84ed2c103aee048d.jpg'); }
+.contact-hero { background-image: url('https://i.pinimg.com/736x/6f/73/4e/6f734e605fe9a68c6f3cfe6252df82da4.jpg'); }
+.error-hero { background-image: url('https://i.pinimg.com/736x/cb/28/06/cb2806ba19ef1216bdcf84cc2732060e.jpg'); }
+.auth-hero { background-image: url('https://i.pinimg.com/736x/0c/a6/75/0ca675cfacef7b9a6f49fc13c74e8123.jpg'); }
+
+/* Inline-styled heroes need higher specificity (beats page <style> blocks) */
+main .maintenance-hero {
+  background-image: url('https://i.pinimg.com/736x/d0/fc/2b/d0fc2b989e1ed19319a776b53f43ff5a.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+main .sitemap-hero {
+  background-image: url('https://i.pinimg.com/736x/4b/3d/82/4b3d829386b0c62116801ec39004775a.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+main .maintenance-hero::after,
+main .sitemap-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,248,234,0.93) 0%, rgba(253,236,234,0.90) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+[data-theme="dark"] main .maintenance-hero::after,
+[data-theme="dark"] main .sitemap-hero::after {
+  background: linear-gradient(135deg, rgba(30,22,37,0.94) 0%, rgba(42,31,53,0.92) 100%);
+}
+
+main .maintenance-hero .hero-bg-shapes,
+main .sitemap-hero .hero-bg-shapes {
+  display: none;
+}
+
+/* ============================================================
    SITEMAP PAGE
    ============================================================ */
 .sitemap-grid {
