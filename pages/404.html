@@ -17,7 +17,21 @@
 </head>
 <body data-page="404">
 
-  <div id="navbar-placeholder"></div>
+  <header class="minimal-topbar">
+    <div class="minimal-topbar-inner">
+    <a href="../index.html" class="navbar-logo" aria-label="Little Splatters Home — Where Every Child Creates">
+      <div class="navbar-logo-icon" aria-hidden="true"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+      <div class="navbar-logo-stack">
+        <div class="navbar-logo-text">Little <span>Splatters</span></div>
+        <small class="navbar-tagline">Where Every Child Creates</small>
+      </div>
+    </a>
+    <div class="minimal-topbar-controls">
+      <button class="navbar-btn-icon" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <button class="navbar-btn-icon" data-dir-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction" style="font-size:0.75rem;font-weight:700;">RTL</button>
+    </div>
+    </div>
+  </header>
 
   <main class="page-wrapper">
 
@@ -141,7 +155,7 @@
             <div class="cta-shape" style="width:500px;height:500px;background:var(--coral-pink);top:-250px;right:-150px;"></div>
           </div>
           <div style="position:relative;z-index:1;">
-            <div style="font-size:3rem;margin-bottom:16px;"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
+            <div style="font-size:3rem;margin-bottom:16px;color:var(--warm-cream);"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
             <h2 id="error-trial-h2">Don't Let a 404 Stop <br>Your Child's Creative Journey!</h2>
             <p>Book a free trial class — the perfect way to start. No commitment, all the joy.</p>
             <div class="cta-banner-actions">
@@ -179,8 +193,6 @@
 
   </main>
 
-  <div id="footer-placeholder"></div>
-  <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>
 </body>
 </html>

@@ -34,20 +34,20 @@
           <div class="breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a><span class="breadcrumb-sep" style="color:rgba(255,248,234,0.4);">›</span>
             <a href="blog.html">Blog</a><span class="breadcrumb-sep" style="color:rgba(255,248,234,0.4);">›</span>
-            <span>Why Art Education Matters</span>
+            <span id="crumb-title">Why Art Education Matters</span>
           </div>
-          <div class="section-label" style="background:rgba(255,248,234,0.15);color:var(--sunshine-yellow);margin:20px 0;"><i class="fa-solid fa-star" aria-hidden="true"></i> Featured Story</div>
+          <div class="section-label" id="article-label" style="background:rgba(255,248,234,0.15);color:var(--sunshine-yellow);margin:20px 0;"><i class="fa-solid fa-star" aria-hidden="true"></i> Featured Story</div>
           <h1 id="article-h1" style="max-width:780px;">Why Art Education is the Most Important Gift We Can Give Our Children</h1>
 
           <div style="display:flex;align-items:center;gap:24px;margin-top:28px;flex-wrap:wrap;">
             <div class="article-meta-author">
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Author Ms. Sarah Chen" class="article-meta-avatar" loading="eager">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Author Ms. Sarah Chen" class="article-meta-avatar" loading="eager" id="article-author-img">
               <div>
-                <div class="article-meta-name" style="color:var(--warm-cream);">Ms. Sarah Chen</div>
-                <div class="article-meta-date">October 1, 2026 · 8 min read</div>
+                <div class="article-meta-name" style="color:var(--warm-cream);" id="article-author-name">Ms. Sarah Chen</div>
+                <div class="article-meta-date" id="article-date">October 1, 2026 · 8 min read</div>
               </div>
             </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;" id="article-badges">
               <span class="badge badge-coral">Art Education</span>
               <span class="badge badge-blue">Child Development</span>
             </div>
@@ -65,9 +65,9 @@
           <!-- Main article -->
           <article class="blog-article-body">
             <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870?w=1200&q=80"
-                 alt="Children celebrating their artwork at a studio exhibition" class="blog-article-feature-img" loading="eager" width="900" height="506">
+                 alt="Children celebrating their artwork at a studio exhibition" class="blog-article-feature-img" loading="eager" width="900" height="506" id="article-feature-img">
 
-            <div class="blog-article-text" data-reveal>
+            <div class="blog-article-text" data-reveal id="article-body">
               <p>In a world increasingly dominated by screens, structured testing, and prescribed outcomes, art remains one of the last true spaces where children can be entirely themselves. No wrong answers. No pass or fail. Just the profound, joyful experience of making something from nothing — and seeing yourself reflected in it.</p>
 
               <p>As art educators, we see this transformation every single day. A five-year-old who arrives too shy to even say their name becomes, over weeks, a child who boldly fills a canvas with colour. A teenager convinced they "can't draw" produces a portrait that moves their parents to tears. These are not small moments. They are life-changing.</p>
@@ -115,18 +115,18 @@
             <div class="sidebar-card">
               <h4><i class="fa-solid fa-pen" aria-hidden="true"></i> About the Author</h4>
               <div style="display:flex;gap:12px;align-items:center;margin-bottom:16px;">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Ms. Sarah Chen" style="width:52px;height:52px;border-radius:50%;object-fit:cover;" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Ms. Sarah Chen" style="width:52px;height:52px;border-radius:50%;object-fit:cover;" loading="lazy" id="sidebar-author-img">
                 <div>
-                  <div style="font-weight:700;font-size:0.9rem;">Ms. Sarah Chen</div>
-                  <div style="font-size:0.78rem;color:var(--coral-pink);">Watercolour & Drawing Specialist</div>
+                  <div style="font-weight:700;font-size:0.9rem;" id="sidebar-author-name">Ms. Sarah Chen</div>
+                  <div style="font-size:0.78rem;color:var(--coral-pink);" id="sidebar-author-role">Watercolour & Drawing Specialist</div>
                 </div>
               </div>
-              <p style="font-size:0.82rem;color:var(--text-muted);">Sarah holds a Master's in Art Education and has taught children's art for 8 years. She specialises in watercolour and child-centred creative development.</p>
+              <p style="font-size:0.82rem;color:var(--text-muted);" id="sidebar-author-bio">Sarah holds a Master's in Art Education and has taught children's art for 8 years. She specialises in watercolour and child-centred creative development.</p>
             </div>
 
             <div class="sidebar-card">
               <h4><i class="fa-solid fa-tags" aria-hidden="true"></i> Tags</h4>
-              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;">
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;" id="sidebar-tags">
                 <span class="badge badge-coral">Art Education</span>
                 <span class="badge badge-blue">Child Development</span>
                 <span class="badge badge-yellow">Creativity</span>
@@ -243,44 +243,44 @@
           <div class="section-label coral"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Related Reading</div>
           <h2 id="related-h2">You Might Also <span>Enjoy These</span></h2>
         </div>
-        <div class="grid grid-3" data-reveal>
+        <div class="grid grid-3" data-reveal id="related-grid">
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=600&q=80"
-                   alt="Parent and child doing art together" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/f3/f3/c2/f3f3c2f7953fe62becde8583e29d631c.jpg"
+                   alt="Parent and child doing art together" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
               <div class="blog-card-category"><span class="badge badge-yellow">Parent Guide</span></div>
             </div>
             <div class="blog-card-body">
               <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> September 8, 2026</div>
               <h3 class="blog-card-title">How to Talk to Your Child About Their Art</h3>
               <p class="blog-card-excerpt">The words we choose matter enormously. Learn to respond in ways that build creative confidence, not crush it.</p>
-              <a href="blog-details.html" class="blog-card-read-more" id="related-1">Read More →</a>
+              <a href="blog-details.html?post=talk-about-art" class="blog-card-read-more" id="related-1">Read More →</a>
             </div>
           </article>
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=600&q=80"
-                   alt="Children sharing artworks at home" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/9a/4e/51/9a4e516b5cda2eb7b7287f26516d5033.jpg"
+                   alt="Children sharing artworks at home" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
               <div class="blog-card-category"><span class="badge badge-coral">Wellbeing</span></div>
             </div>
             <div class="blog-card-body">
               <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> August 22, 2026</div>
               <h3 class="blog-card-title">Art & Your Child's Mental Health: What the Research Says</h3>
               <p class="blog-card-excerpt">Regular creative expression is one of the most powerful tools for emotional regulation and resilience in children.</p>
-              <a href="blog-details.html" class="blog-card-read-more" id="related-2">Read More →</a>
+              <a href="blog-details.html?post=art-wellbeing" class="blog-card-read-more" id="related-2">Read More →</a>
             </div>
           </article>
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80"
-                   alt="Child with colourful art supplies" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/b1/42/d4/b142d4a74ce87814a0b7c1e65ae969a5.jpg"
+                   alt="Child with colourful art supplies" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
               <div class="blog-card-category"><span class="badge badge-mint">Buying Guide</span></div>
             </div>
             <div class="blog-card-body">
               <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> August 30, 2026</div>
               <h3 class="blog-card-title">The Complete Guide to Buying Art Supplies for Kids</h3>
               <p class="blog-card-excerpt">Don't waste money on materials that frustrate young artists. Here's exactly what to buy for every age group.</p>
-              <a href="blog-details.html" class="blog-card-read-more" id="related-3">Read More →</a>
+              <a href="blog-details.html?post=buying-supplies" class="blog-card-read-more" id="related-3">Read More →</a>
             </div>
           </article>
         </div>
@@ -315,5 +315,6 @@
   <div id="footer-placeholder"></div>
   <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/content.js"></script>
 </body>
 </html>

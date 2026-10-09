@@ -35,26 +35,26 @@
             <div class="breadcrumb" aria-label="Breadcrumb">
               <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span>
               <a href="services.html">Services</a><span class="breadcrumb-sep">›</span>
-              <span>Watercolour Wonder</span>
+              <span id="crumb-service">Watercolour Wonder</span>
             </div>
-            <div class="section-label" style="background:rgba(255,248,234,0.15);color:var(--sunshine-yellow);margin-bottom:20px;"><i class="fa-solid fa-droplet" aria-hidden="true"></i> Painting Class</div>
+            <div class="section-label" id="service-label" style="background:rgba(255,248,234,0.15);color:var(--sunshine-yellow);margin-bottom:20px;"><i class="fa-solid fa-droplet" aria-hidden="true"></i> Painting Class</div>
             <h1 id="service-hero-h1">Watercolour Wonder — <br>Ages 6–12</h1>
-            <p style="font-size:1.05rem;margin:20px 0 32px;max-width:500px;">A dedicated watercolour painting class where children explore the delicate, luminous world of watercolour through guided projects and free exploration.</p>
+            <p style="font-size:1.05rem;margin:20px 0 32px;max-width:500px;" id="service-intro">A dedicated watercolour painting class where children explore the delicate, luminous world of watercolour through guided projects and free exploration.</p>
             <div style="display:flex;gap:24px;flex-wrap:wrap;margin-bottom:32px;">
               <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:12px 20px;text-align:center;">
                 <div style="font-size:1.5rem;margin-bottom:4px;"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i></div>
                 <div style="font-size:0.75rem;color:rgba(255,248,234,0.7);font-weight:600;">Duration</div>
-                <div style="font-weight:700;color:var(--warm-cream);">60 min</div>
+                <div style="font-weight:700;color:var(--warm-cream);" id="stat-duration">60 min</div>
               </div>
               <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:12px 20px;text-align:center;">
                 <div style="font-size:1.5rem;margin-bottom:4px;"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
                 <div style="font-size:0.75rem;color:rgba(255,248,234,0.7);font-weight:600;">Class Size</div>
-                <div style="font-weight:700;color:var(--warm-cream);">Max 8</div>
+                <div style="font-weight:700;color:var(--warm-cream);" id="stat-size">Max 8</div>
               </div>
               <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:12px 20px;text-align:center;">
                 <div style="font-size:1.5rem;margin-bottom:4px;"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></div>
                 <div style="font-size:0.75rem;color:rgba(255,248,234,0.7);font-weight:600;">Schedule</div>
-                <div style="font-weight:700;color:var(--warm-cream);">Weekly</div>
+                <div style="font-weight:700;color:var(--warm-cream);" id="stat-schedule">Weekly</div>
               </div>
               <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius-md);padding:12px 20px;text-align:center;">
                 <div style="font-size:1.5rem;margin-bottom:4px;"><i class="fa-solid fa-suitcase" aria-hidden="true"></i></div>
@@ -69,7 +69,7 @@
           </div>
           <div data-reveal="right" data-delay="200">
             <img src="https://images.unsplash.com/photo-1526718583451-e88ebf774771?w=700&q=80"
-                 alt="Child happily painting with watercolours" class="detail-img" loading="eager" width="600" height="450">
+                 alt="Child happily painting with watercolours" class="detail-img" loading="eager" width="600" height="450" id="service-hero-img">
           </div>
         </div>
       </div>
@@ -84,20 +84,11 @@
           <!-- Main Content -->
           <div>
             <div class="section-label blue" style="margin-bottom:20px;"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i> Class Overview</div>
-            <h2 id="overview-h2">About <span>Watercolour Wonder</span></h2>
-            <p style="margin-top:16px;margin-bottom:20px;font-size:1.05rem;">Watercolour Wonder is one of our most loved classes — a dedicated space where children aged 6–12 explore the unique, translucent beauty of watercolour paints in a warm, supportive environment.</p>
-            <p style="margin-bottom:20px;">Each 60-minute session begins with a short warm-up exercise, introduces a new technique or concept, and then guides children through a structured creative project. Sessions conclude with a group share where children celebrate each other's work.</p>
-            <p style="margin-bottom:32px;">Whether your child is a complete beginner or has some experience, Watercolour Wonder is paced to meet them where they are. Instructors provide individualised guidance so each student can work at their own pace while being gently stretched.</p>
-
-            <div class="highlight-box blue" style="margin-bottom:24px;">
-              <h4 style="margin-bottom:8px;"><i class="fa-solid fa-droplet" aria-hidden="true"></i> What Makes Watercolour Special?</h4>
-              <p style="font-size:0.9rem;">Watercolour teaches children to embrace happy accidents, work with the flow of water, and develop patience and observation — skills that extend far beyond the art room.</p>
+            <h2 id="overview-h2"><span id="overview-name">About <span>Watercolour Wonder</span></span></h2>
+            <div id="overview-body">
             </div>
 
-            <div class="highlight-box mint">
-              <h4 style="margin-bottom:8px;"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Class Schedule</h4>
-              <p style="font-size:0.9rem;margin-bottom:8px;"><strong>Tuesday 4:00–5:00pm</strong> · Ages 6–9</p>
-              <p style="font-size:0.9rem;"><strong>Saturday 10:00–11:00am</strong> · Ages 9–12</p>
+            <div id="overview-highlights">
             </div>
           </div>
 
@@ -108,19 +99,19 @@
               <div class="sidebar-info">
                 <div class="sidebar-info-item">
                   <span class="sidebar-info-label">Age Range</span>
-                  <span class="sidebar-info-value">6–12 years</span>
+                  <span class="sidebar-info-value" id="sv-age">6–12 years</span>
                 </div>
                 <div class="sidebar-info-item">
                   <span class="sidebar-info-label">Duration</span>
-                  <span class="sidebar-info-value">60 minutes</span>
+                  <span class="sidebar-info-value" id="sv-duration">60 minutes</span>
                 </div>
                 <div class="sidebar-info-item">
                   <span class="sidebar-info-label">Class Size</span>
-                  <span class="sidebar-info-value">Max 8 students</span>
+                  <span class="sidebar-info-value" id="sv-size">Max 8 students</span>
                 </div>
                 <div class="sidebar-info-item">
                   <span class="sidebar-info-label">Level</span>
-                  <span class="sidebar-info-value">All levels</span>
+                  <span class="sidebar-info-value" id="sv-level">All levels</span>
                 </div>
                 <div class="sidebar-info-item">
                   <span class="sidebar-info-label">Supplies</span>
@@ -128,7 +119,7 @@
                 </div>
                 <div class="sidebar-info-item">
                   <span class="sidebar-info-label">Instructor</span>
-                  <span class="sidebar-info-value">Ms. Sarah Chen</span>
+                  <span class="sidebar-info-value" id="sv-instructor">Ms. Sarah Chen</span>
                 </div>
               </div>
             </div>
@@ -136,11 +127,11 @@
             <div class="sidebar-card">
               <h4><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> Class Pricing</h4>
               <div style="margin-bottom:16px;">
-                <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--coral-pink);line-height:1;">$28</div>
+                <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--coral-pink);line-height:1;" id="sp-single">$28</div>
                 <div style="font-size:0.82rem;color:var(--text-muted);">per single class</div>
               </div>
               <div style="margin-bottom:20px;">
-                <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--ink-plum);line-height:1;">$89</div>
+                <div style="font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--ink-plum);line-height:1;" id="sp-monthly">$89</div>
                 <div style="font-size:0.82rem;color:var(--text-muted);">monthly (4 classes)</div>
               </div>
               <a href="pricing.html" class="btn btn-primary btn-sm w-100" style="justify-content:center;" id="sidebar-pricing-btn">View All Pricing</a>
@@ -169,10 +160,10 @@
         <div class="section-header text-center" data-reveal>
           <div class="section-label yellow"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Learning Outcomes</div>
           <h2 id="learn-h2">What Your Child Will <span>Learn & Gain</span></h2>
-          <p>Every Watercolour Wonder class is carefully structured around skill development and personal creative growth.</p>
+          <p id="learn-sub">Every Watercolour Wonder class is carefully structured around skill development and personal creative growth.</p>
         </div>
 
-        <div class="learn-items grid grid-3" data-reveal>
+        <div class="learn-items grid grid-3" data-reveal id="learn-grid">
           <div class="learn-item"><div class="learn-item-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div><p>Wet-on-wet & wet-on-dry watercolour techniques</p></div>
           <div class="learn-item"><div class="learn-item-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div><p>Colour theory — primary, secondary & complementary colours</p></div>
           <div class="learn-item"><div class="learn-item-check"><i class="fa-solid fa-check" aria-hidden="true"></i></div><p>Brush care, pressure, and stroke control</p></div>
@@ -188,7 +179,7 @@
         </div>
 
         <!-- Outcomes showcase -->
-        <div class="grid grid-3 mt-40" data-reveal>
+        <div class="grid grid-3 mt-40" data-reveal id="outcomes-grid">
           <div class="card text-center">
             <div style="font-size:3rem;margin-bottom:12px;"><i class="fa-solid fa-palette" aria-hidden="true"></i></div>
             <h4>Technical Skills</h4>
@@ -219,7 +210,7 @@
           <p>We provide all materials — high-quality, non-toxic, and age-appropriate. Parents never need to buy or bring anything.</p>
         </div>
 
-        <div class="materials-grid" data-reveal>
+        <div class="materials-grid" data-reveal id="materials-grid">
           <div class="material-card">
             <span class="material-icon"><i class="fa-solid fa-palette" aria-hidden="true"></i></span>
             <h5>Watercolour Paints</h5>
@@ -265,7 +256,7 @@
         <!-- Sample project activities -->
         <div style="margin-top:60px;" data-reveal>
           <h3 style="text-align:center;margin-bottom:40px;">Sample <span style="color:var(--coral-pink);">Class Projects</span></h3>
-          <div class="grid grid-4">
+          <div class="grid grid-4" id="projects-grid">
             <div style="border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);position:relative;">
               <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&q=80"
                    alt="Sample watercolour landscape class project" loading="lazy" style="width:100%;aspect-ratio:1;object-fit:cover;">
@@ -300,7 +291,7 @@
           <div data-reveal>
             <div class="section-label blue" style="margin-bottom:20px;"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i> Class Structure</div>
             <h2 id="structure-h2">What Happens <span>Each Session</span></h2>
-            <p style="margin-top:16px;margin-bottom:36px;">Every 60-minute Watercolour Wonder session follows a thoughtful, child-centred structure that balances skill learning with creative freedom.</p>
+            <p style="margin-top:16px;margin-bottom:36px;" id="journey-intro">Every 60-minute Watercolour Wonder session follows a thoughtful, child-centred structure that balances skill learning with creative freedom.</p>
 
             <div class="journey-steps">
               <div class="journey-step">
@@ -353,10 +344,10 @@
             <!-- Testimonial -->
             <div class="testimonial-card">
               <div class="testimonial-stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div>
-              <p class="testimonial-text">"My daughter has been doing Watercolour Wonder for 6 months and the progress is breathtaking. She now paints entire scenes from imagination!"</p>
+              <p class="testimonial-text" id="st-text">"My daughter has been doing Watercolour Wonder for 6 months and the progress is breathtaking. She now paints entire scenes from imagination!"</p>
               <div class="testimonial-author">
                 <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="" class="testimonial-avatar" loading="lazy">
-                <div><div class="testimonial-name">Gemma T.</div><div class="testimonial-role">Parent of Zoe, age 9</div></div>
+                <div><div class="testimonial-name" id="st-name">Gemma T.</div><div class="testimonial-role" id="st-role">Parent of Zoe, age 9</div></div>
               </div>
             </div>
           </div>
@@ -372,11 +363,11 @@
         <div class="section-header text-center" data-reveal>
           <div class="section-label coral"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQs</div>
           <h2 id="faq-h2">Frequently Asked <span>Questions</span></h2>
-          <p>Everything parents need to know about Watercolour Wonder — and any of our classes.</p>
+          <p id="faq-sub">Everything parents need to know about Watercolour Wonder — and any of our classes.</p>
         </div>
 
         <div style="max-width:780px;margin:0 auto 60px;" data-reveal>
-          <div class="accordion" role="list">
+          <div class="accordion" role="list" id="faq-list">
             <div class="accordion-item" role="listitem">
               <div class="accordion-header" role="button" tabindex="0" aria-expanded="false">
                 Does my child need any watercolour experience?
@@ -441,8 +432,8 @@
           </div>
           <div style="position:relative;z-index:1;">
             <div style="font-size:3.5rem;margin-bottom:16px;"><i class="fa-solid fa-droplet" aria-hidden="true"></i></div>
-            <h2>Try Watercolour Wonder — Free!</h2>
-            <p>Book your child's free trial class today. No experience needed, no commitment required — just bring curiosity and we'll handle the rest.</p>
+            <h2 id="cta-title">Try Watercolour Wonder — Free!</h2>
+            <p id="cta-text">Book your child's free trial class today. No experience needed, no commitment required — just bring curiosity and we'll handle the rest.</p>
             <div class="cta-banner-actions">
               <a href="contact.html" class="btn btn-primary btn-lg" id="service-detail-cta-contact"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Book Free Trial Class</a>
               <a href="pricing.html" class="btn btn-outline-white btn-lg" id="service-detail-cta-pricing"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> View Pricing</a>
@@ -457,5 +448,6 @@
   <div id="footer-placeholder"></div>
   <script src="../js/components.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/content.js"></script>
 </body>
 </html>

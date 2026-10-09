@@ -440,6 +440,14 @@ p { color: var(--text-secondary); line-height: 1.8; }
 .badge-mint    { background: var(--mint-light);   color: var(--mint-dark); }
 .badge-plum    { background: rgba(51,38,61,0.1);  color: var(--ink-plum); }
 
+[data-theme="dark"] .badge-plum { background: rgba(255,248,234,0.15); color: #FFF8EA; }
+
+/* Sitemap legal icon tile stays visible in dark mode */
+[data-theme="dark"] .sitemap-icon[style*="51,38,61"] {
+  background: rgba(255,248,234,0.15);
+  color: #FFF8EA;
+}
+
 /* ============================================================
    NAVBAR
    ============================================================ */
@@ -1698,6 +1706,9 @@ select.form-control {
   padding: 40px;
   position: relative;
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .pricing-card:hover {
@@ -1741,6 +1752,11 @@ select.form-control {
   justify-content: center;
   font-size: 2rem;
   margin-bottom: 20px;
+  color: var(--ink-plum);
+}
+
+.pricing-card.featured .pricing-icon {
+  color: var(--ink-plum);
 }
 
 .pricing-amount {
@@ -1781,6 +1797,7 @@ select.form-control {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1;
 }
 
 .pricing-feature {
@@ -1807,6 +1824,10 @@ select.form-control {
 .pricing-card.featured .pricing-feature .feature-icon {
   background: rgba(168,201,165,0.3);
   color: var(--fresh-mint);
+}
+
+.pricing-card .btn.w-100 {
+  margin-top: auto;
 }
 
 /* ============================================================
@@ -2121,6 +2142,11 @@ select.form-control {
 .highlight-box.blue   { background: var(--blue-light);   border-color: var(--sky-blue); }
 .highlight-box.mint   { background: var(--mint-light);   border-color: var(--fresh-mint); }
 
+[data-theme="dark"] .highlight-box.coral  { background: rgba(240,124,114,0.15); }
+[data-theme="dark"] .highlight-box.yellow { background: rgba(242,201,76,0.15); }
+[data-theme="dark"] .highlight-box.blue   { background: rgba(114,183,216,0.15); }
+[data-theme="dark"] .highlight-box.mint   { background: rgba(168,201,165,0.15); }
+
 /* ============================================================
    WAVE DIVIDER
    ============================================================ */
@@ -2358,9 +2384,46 @@ select.form-control {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--coral-pink);
+  color: var(--yellow-dark);
   margin-top: 2px;
   white-space: nowrap;
+}
+
+/* Minimal top bar for standalone pages (login, 404, maintenance) */
+.minimal-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(255, 248, 234, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(51,38,61,0.08);
+}
+
+[data-theme="dark"] .minimal-topbar {
+  background: rgba(30, 22, 37, 0.9);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
+.minimal-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 14px var(--container-pad);
+}
+
+/* Standalone pages have no fixed navbar, so drop the reserved top offset */
+.minimal-topbar + .page-wrapper {
+  padding-top: 0;
+}
+
+.minimal-topbar-controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .footer-tagline {
