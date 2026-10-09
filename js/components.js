@@ -27,19 +27,11 @@ function siteLink(file) {
    ============================================================ */
 function getNavbarHTML(activePage = '') {
   const pages = [
-    { label: 'Home', href: 'index.html', key: 'home', sub: [
-      { label: 'Home — General', href: 'index.html' },
-      { label: 'Home — Art Education', href: 'home2.html' },
-    ]},
+    { label: 'Home', href: 'index.html', key: 'home' },
+    { label: 'Home 2', href: 'home2.html', key: 'home2' },
     { label: 'About', href: 'about.html', key: 'about' },
-    { label: 'Services', href: 'services.html', key: 'services', sub: [
-      { label: 'All Services', href: 'services.html' },
-      { label: 'Service Details', href: 'service-details.html' },
-    ]},
-    { label: 'Blog', href: 'blog.html', key: 'blog', sub: [
-      { label: 'Blog', href: 'blog.html' },
-      { label: 'Blog Details', href: 'blog-details.html' },
-    ]},
+    { label: 'Services', href: 'services.html', key: 'services' },
+    { label: 'Blog', href: 'blog.html', key: 'blog' },
     { label: 'Pricing', href: 'pricing.html', key: 'pricing' },
     { label: 'Contact', href: 'contact.html', key: 'contact' },
   ];
@@ -78,7 +70,6 @@ function getNavbarHTML(activePage = '') {
     { label: '<i class="fa-solid fa-wrench" aria-hidden="true"></i> Maintenance', href: 'maintenance.html', key: 'maintenance' },
     { label: '<i class="fa-solid fa-map" aria-hidden="true"></i> Sitemap', href: 'sitemap.html', key: 'sitemap' },
     { label: '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 404 Page', href: '404.html', key: '404' },
-    { label: '<i class="fa-solid fa-rocket" aria-hidden="true"></i> Coming Soon', href: 'coming-soon.html', key: 'coming-soon' },
   ].map(l => `<a href="${siteLink(l.href)}" class="mobile-nav-link ${activePage === l.key ? 'active' : ''}">${l.label}</a>`).join('');
 
   return `
@@ -139,6 +130,16 @@ function getFooterHTML() {
   return `
 <footer class="footer" role="contentinfo">
   <div class="container">
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-text">
+        <h4><i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i> Join Our Art Family Newsletter</h4>
+        <p>Get class updates, art tips & exclusive workshop invites — once a month, no spam.</p>
+      </div>
+      <form class="newsletter-form footer-newsletter-form" novalidate>
+        <input type="email" class="form-control" placeholder="Your email address" aria-label="Email address" required>
+        <button type="submit" class="btn btn-primary">Subscribe <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+      </form>
+    </div>
     <div class="footer-grid">
       <!-- Brand -->
       <div class="footer-brand">
@@ -149,7 +150,6 @@ function getFooterHTML() {
             <small class="navbar-tagline" style="color:var(--sunshine-yellow);">Where Every Child Creates</small>
           </div>
         </a>
-        <span class="footer-tagline">Where Every Child Creates <i class="fa-solid fa-palette" aria-hidden="true"></i></span>
         <p>A premium children's art & painting studio where creativity blooms and young artists discover the joy of expression through color, form, and imagination.</p>
         <div class="footer-social">
           <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
@@ -183,7 +183,6 @@ function getFooterHTML() {
           <li><a href="${siteLink('maintenance.html')}" class="footer-link"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Maintenance</a></li>
           <li><a href="${siteLink('sitemap.html')}" class="footer-link"><i class="fa-solid fa-map" aria-hidden="true"></i> Sitemap</a></li>
           <li><a href="${siteLink('404.html')}" class="footer-link"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 404 Page</a></li>
-          <li><a href="${siteLink('coming-soon.html')}" class="footer-link"><i class="fa-solid fa-rocket" aria-hidden="true"></i> Coming Soon</a></li>
         </ul>
       </div>
 

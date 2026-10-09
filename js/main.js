@@ -269,6 +269,77 @@ const GalleryFilter = {
 };
 
 /* ============================================================
+   BLOG VIEW MORE (3 cards at a time)
+   ============================================================ */
+const BlogViewMore = {
+  PAGE: 3,
+  count: 3,
+
+  init() {
+    const section = $('#latest-articles');
+    if (!section) return;
+    const grid = $('.articles-grid', section);
+    const moreBtn = $('#view-more-articles');
+    const lessBtn = $('#view-less-articles');
+    if (!grid || !moreBtn) return;
+    const cards = $$('.blog-card[data-category]', grid);
+    if (!cards.length) return;
+
+    const activeFilter = () => {
+      const active = $('.filter-btn.active', section);
+      return active ? active.getAttribute('data-filter') : 'all';
+    };
+
+    const apply = () => {
+      const f = activeFilter();
+      const matching = cards.filter(c => f === 'all' || c.getAttribute('data-category') === f);
+      matching.forEach((c, i) => {
+        if (i < this.count) {
+          c.style.display = '';
+          c.style.animation = 'fadeInUp 0.4s ease';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+      const remaining = matching.length - Math.min(this.count, matching.length);
+      if (remaining > 0) {
+        moreBtn.style.display = '';
+        moreBtn.textContent = `View More (${remaining} more)`;
+      } else {
+        moreBtn.style.display = 'none';
+      }
+      if (lessBtn) {
+        lessBtn.style.display = (this.count > this.PAGE && matching.length > this.PAGE) ? '' : 'none';
+      }
+    };
+
+    moreBtn.addEventListener('click', () => {
+      this.count += this.PAGE;
+      apply();
+    });
+
+    if (lessBtn) {
+      lessBtn.addEventListener('click', () => {
+        this.count = this.PAGE;
+        apply();
+        const heading = $('#latest-h2');
+        if (heading) heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+
+    // Reset to first 3 whenever the category filter changes
+    // (runs after GalleryFilter's own handler)
+    $$('.filter-btn', section).forEach(b => b.addEventListener('click', () => {
+      this.count = this.PAGE;
+      apply();
+    }));
+
+    this.count = this.PAGE;
+    apply();
+  }
+};
+
+/* ============================================================
    LIGHTBOX
    ============================================================ */
 const Lightbox = {
@@ -548,30 +619,12 @@ const PageTransition = {
   overlay: null,
 
   init() {
-    this.overlay = document.createElement('div');
-    this.overlay.className = 'page-transition';
-    document.body.appendChild(this.overlay);
+    // Disabled: overlay was causing blank screen on back navigation.
+    // Clean up any existing overlay and navigate normally.
+    $$('.page-transition').forEach(el => el.remove());
 
-    // Reveal page
-    this.overlay.classList.add('leaving');
-    setTimeout(() => this.overlay.classList.remove('leaving'), 500);
-
-    // Intercept internal links
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a[href]');
-      if (!link) return;
-
-      const href = link.getAttribute('href');
-      if (!href || href.startsWith('#') || href.startsWith('mailto:') ||
-          href.startsWith('tel:') || href.startsWith('http') ||
-          link.getAttribute('target') === '_blank') return;
-
-      e.preventDefault();
-      this.overlay.classList.add('entering');
-
-      setTimeout(() => {
-        window.location.href = href;
-      }, 400);
+    window.addEventListener('pageshow', () => {
+      $$('.page-transition').forEach(el => el.remove());
     });
   }
 };
@@ -681,6 +734,7 @@ document.addEventListener('DOMContentLoaded', () => {
   Accordion.init();
   Tabs.init();
   GalleryFilter.init();
+  BlogViewMore.init();
   Lightbox.init();
   Toast.init();
   TrialForm.init();

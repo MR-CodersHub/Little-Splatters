@@ -203,6 +203,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+  align-items: stretch;
 }
 
 .process-card {
@@ -213,6 +214,84 @@
   text-align: center;
   transition: all var(--transition-base);
   backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+/* Studio Experience — properly arranged 2-col card */
+.studio-experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.studio-experience-img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  display: block;
+}
+
+.studio-experience-content h3 {
+  color: var(--warm-cream);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.studio-experience-content > p {
+  color: rgba(255,248,234,0.75);
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+
+.studio-label {
+  background: rgba(255,248,234,0.15);
+  color: var(--warm-cream);
+  margin-bottom: 16px;
+}
+
+.studio-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.studio-checklist li {
+  display: flex;
+  gap: 10px;
+  color: rgba(255,248,234,0.85);
+  font-size: 0.92rem;
+  font-weight: 500;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+}
+
+.studio-checklist li span {
+  color: var(--sunshine-yellow);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(242,201,76,0.15);
+  border-radius: 50%;
+  font-size: 0.75rem;
 }
 
 .process-card:hover {
@@ -243,7 +322,146 @@
   font-size: 0.88rem;
 }
 
+/* Crafts + Mixed Media — redesigned mini cards */
+.crafts-mixed-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.crafts-label {
+  margin-bottom: 16px;
+}
+
+.crafts-lead {
+  margin-bottom: 32px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.mini-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mini-service-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  align-items: flex-start;
+}
+
+.mini-service-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  border-color: var(--coral-pink);
+}
+
+.mini-service-img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.mini-service-body h4 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+
+.mini-service-body p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.mini-service-body .service-card-meta {
+  margin-bottom: 8px;
+}
+
+.mini-card-list .btn {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
 /* Trial CTA */
+.trial-bg-section {
+  position: relative;
+  background-image: url('https://i.pinimg.com/736x/ff/90/c5/ff90c5de6748f22d1f8f7c8677d13233.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.trial-bg-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,248,234,0.94) 0%, rgba(255,243,218,0.96) 100%);
+  z-index: 0;
+}
+
+.trial-bg-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme="dark"] .trial-bg-section::before {
+  background: linear-gradient(180deg, rgba(30,22,37,0.94) 0%, rgba(42,31,53,0.96) 100%);
+}
+
+/* Parent Reviews (About) — proper spacing */
+#trust-cta .section-header {
+  padding: 0 24px;
+}
+
+#trust-cta .grid.grid-3 {
+  padding-bottom: 8px;
+}
+
+/* Holiday & Weekend Workshops — padding + alignment fix */
+#workshops .section-header {
+  padding: 0 24px;
+}
+
+#workshops .grid.grid-3 {
+  align-items: stretch;
+}
+
+#workshops .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 32px 28px;
+}
+
+#workshops .card h4 {
+  margin: 4px 0 10px;
+}
+
+#workshops .card .section-label {
+  align-self: flex-start;
+  margin-bottom: 14px;
+}
+
+#workshops .card p {
+  flex: 1;
+}
+
+#workshops .card .btn.w-100 {
+  margin-top: 8px;
+}
 .trial-cta-section {
   position: relative;
   overflow: hidden;
@@ -1450,6 +1668,8 @@
   .about-story-grid,
   .environment-grid,
   .why-choose-grid,
+  .studio-experience-grid,
+  .crafts-mixed-grid,
   .instructor-preview-grid,
   .enquiry-grid,
   .blog-detail-content {
@@ -1516,6 +1736,15 @@
 }
 
 @media (max-width: 768px) {
+  .studio-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 56px;
+  }
+
+  .studio-experience-img {
+    max-height: 320px;
+  }
   .services-showcase,
   .philosophy-cards,
   .values-grid,
@@ -1582,6 +1811,15 @@
   .age-group-cards,
   .mediums-grid {
     grid-template-columns: 1fr;
+  }
+
+  .mini-service-card {
+    flex-direction: column;
+  }
+
+  .mini-service-img {
+    width: 100%;
+    height: 170px;
   }
 
   .error-404-num { font-size: 7rem; }

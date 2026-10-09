@@ -85,7 +85,6 @@
   --shadow-lg:       0 8px 40px rgba(0,0,0,0.45);
   --shadow-xl:       0 16px 60px rgba(0,0,0,0.55);
   --shadow-color:    rgba(0,0,0,0.35);
-  --warm-cream:      #2A1F35;
 }
 
 /* RTL Support */
@@ -414,11 +413,13 @@ p { color: var(--text-secondary); line-height: 1.8; }
   flex-shrink: 0;
 }
 
-.card-icon.coral   { background: var(--coral-light); }
-.card-icon.yellow  { background: var(--yellow-light); }
-.card-icon.blue    { background: var(--blue-light); }
-.card-icon.mint    { background: var(--mint-light); }
-.card-icon.plum    { background: rgba(51,38,61,0.1); }
+.card-icon.coral   { background: var(--coral-light); color: var(--coral-dark); }
+.card-icon.yellow  { background: var(--yellow-light); color: var(--yellow-dark); }
+.card-icon.blue    { background: var(--blue-light); color: var(--blue-dark); }
+.card-icon.mint    { background: var(--mint-light); color: var(--mint-dark); }
+.card-icon.plum    { background: rgba(51,38,61,0.1); color: var(--ink-plum); }
+
+[data-theme="dark"] .card-icon.plum { color: #FFF8EA; }
 
 /* ============================================================
    BADGE / TAG
@@ -509,7 +510,7 @@ p { color: var(--text-secondary); line-height: 1.8; }
   line-height: 1;
 }
 
-[data-theme="dark"] .navbar-logo-text { color: var(--warm-cream); }
+[data-theme="dark"] .navbar-logo-text { color: #FFF8EA; }
 
 .navbar-logo-text span {
   color: var(--coral-pink);
@@ -1244,7 +1245,8 @@ select.form-control {
 .back-to-top {
   position: fixed;
   bottom: 24px;
-  left: 24px;
+  right: 24px;
+  left: auto;
   width: 48px;
   height: 48px;
   background: var(--coral-pink);
@@ -1273,8 +1275,8 @@ select.form-control {
 }
 
 [dir="rtl"] .back-to-top {
-  left: auto;
-  right: 24px;
+  right: auto;
+  left: 24px;
 }
 
 /* ============================================================
@@ -1359,8 +1361,55 @@ select.form-control {
   padding-bottom: 60px;
 }
 
-.footer-brand .navbar-logo-text {
+.footer-newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(255,248,234,0.06);
+  border: 1px solid rgba(255,248,234,0.12);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.footer-newsletter-text h4 {
   color: var(--warm-cream);
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-newsletter-text h4 i {
+  color: var(--sunshine-yellow);
+}
+
+.footer-newsletter-text p {
+  color: rgba(255,248,234,0.6);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  min-width: 280px;
+  max-width: 480px;
+  margin: 0;
+}
+
+.footer-newsletter-form .form-control {
+  flex: 1;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.95);
+}
+
+.footer-brand .navbar-logo-text {
+  color: #FFF8EA;
   font-size: 1.5rem;
 }
 
@@ -1582,6 +1631,10 @@ select.form-control {
   padding: 32px;
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: flex-start;
 }
 
 .testimonial-card:hover {
@@ -1603,12 +1656,17 @@ select.form-control {
   line-height: 1.8;
   font-style: italic;
   margin-bottom: 24px;
+  flex: 1;
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
 }
 
 .testimonial-avatar {
@@ -1772,6 +1830,8 @@ select.form-control {
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 
 .instructor-info {
@@ -1809,6 +1869,9 @@ select.form-control {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-color);
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .blog-card:hover {
@@ -1840,6 +1903,9 @@ select.form-control {
 
 .blog-card-body {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .blog-card-date {
@@ -1870,6 +1936,7 @@ select.form-control {
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 16px;
+  flex: 1;
 }
 
 .blog-card-read-more {
@@ -1880,6 +1947,8 @@ select.form-control {
   align-items: center;
   gap: 4px;
   transition: gap var(--transition-fast);
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 .blog-card:hover .blog-card-read-more {
@@ -1896,6 +1965,9 @@ select.form-control {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-color);
   transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card:hover {
@@ -1920,6 +1992,9 @@ select.form-control {
 
 .service-card-body {
   padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .service-card-meta {
@@ -1942,6 +2017,12 @@ select.form-control {
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 20px;
+  flex: 1;
+}
+
+.service-card-body .btn {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* ============================================================
@@ -2139,6 +2220,17 @@ select.form-control {
     flex-direction: column;
   }
 
+  .footer-newsletter {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .footer-newsletter-form {
+    max-width: 100%;
+    width: 100%;
+  }
+
   .newsletter-form .btn {
     border-radius: var(--radius-full);
   }
@@ -2199,6 +2291,7 @@ select.form-control {
 .mt-24 { margin-top: 24px; }
 .mt-32 { margin-top: 32px; }
 .mt-40 { margin-top: 40px; }
+.mt-56 { margin-top: 56px; }
 .mb-8  { margin-bottom: 8px; }
 .mb-16 { margin-bottom: 16px; }
 .mb-24 { margin-bottom: 24px; }

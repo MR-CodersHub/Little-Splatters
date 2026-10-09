@@ -37,8 +37,8 @@
 
         <!-- Featured Article -->
         <div class="featured-article" data-reveal>
-          <img src="https://images.unsplash.com/photo-1567443024551-f3e3cc2be870?w=800&q=80"
-               alt="Children celebrating their artwork at a student exhibition" class="featured-article-img" loading="eager" width="600" height="400">
+          <img src="https://i.pinimg.com/736x/97/c4/c0/97c4c092a91e16b1a26675585d6357b6.jpg"
+               alt="Why Art Education is the Most Important Thing We Can Give Our Children - Featured Story" class="featured-article-img" loading="eager" width="600" height="400" referrerpolicy="no-referrer">
           <div class="featured-article-body">
             <div class="section-label coral"><i class="fa-solid fa-star" aria-hidden="true"></i> Featured Story</div>
             <h2>Why Art Education is the Most Important Thing We Can Give Our Children</h2>
@@ -63,20 +63,24 @@
          SECTION 2 — LATEST ARTICLES
          ============================================= -->
     <section class="section" id="latest-articles" aria-labelledby="latest-h2">
-      <div class="container">
-        <div class="section-header flex-between" style="align-items:flex-end;" data-reveal>
-          <div>
-            <div class="section-label blue"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Latest Articles</div>
-            <h2 id="latest-h2">Fresh from <span>Our Studio</span></h2>
-          </div>
-          <a href="#" class="btn btn-outline btn-sm" id="view-all-articles" style="flex-shrink:0;">View All →</a>
+      <div class="container" data-gallery-filter>
+        <div class="section-header text-center" data-reveal>
+          <div class="section-label blue"><i class="fa-solid fa-newspaper" aria-hidden="true"></i> Latest Articles</div>
+          <h2 id="latest-h2">Fresh from <span>Our Studio</span></h2>
+        </div>
+
+        <div class="gallery-filters" role="group" aria-label="Filter articles by category" data-reveal>
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="tips" aria-pressed="false">Art Tips</button>
+          <button class="filter-btn" data-filter="crafts" aria-pressed="false">Crafts & DIY</button>
+          <button class="filter-btn" data-filter="guides" aria-pressed="false">Parent Guides</button>
         </div>
 
         <div class="articles-grid" data-reveal>
-          <article class="blog-card">
+          <article class="blog-card" data-category="tips">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80"
-                   alt="Young children learning to draw together" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/d8/3e/04/d83e04d62b6d229a8a993a556be062e9.jpg"
+                   alt="10 Drawing Exercises That Transform Young Artists in 30 Days" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer" style="object-position:center bottom;">
               <div class="blog-card-category"><span class="badge badge-coral">Drawing Tips</span></div>
             </div>
             <div class="blog-card-body">
@@ -87,10 +91,10 @@
             </div>
           </article>
 
-          <article class="blog-card">
+          <article class="blog-card" data-category="guides">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&q=80"
-                   alt="Child painting at home with watercolours" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/74/50/94/7450941e01fa35d41ab8f1a99775faef.jpg"
+                   alt="How to Set Up the Perfect Art Corner at Home for Your Child" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
               <div class="blog-card-category"><span class="badge badge-yellow">Parent Guide</span></div>
             </div>
             <div class="blog-card-body">
@@ -101,10 +105,10 @@
             </div>
           </article>
 
-          <article class="blog-card">
+          <article class="blog-card" data-category="guides">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&q=80"
-                   alt="Teenager working on canvas art project" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/1200x/48/16/00/481600c07a035dbf6bbc22400d5ad299.jpg"
+                   alt="Building an Art Portfolio for Your Teenager" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer" style="object-position:center bottom;">
               <div class="blog-card-category"><span class="badge badge-blue">Teen Art</span></div>
             </div>
             <div class="blog-card-body">
@@ -114,6 +118,95 @@
               <a href="blog-details.html" class="blog-card-read-more" id="article-3-link">Read More →</a>
             </div>
           </article>
+
+          <article class="blog-card" data-category="crafts">
+            <div class="blog-card-img-wrap">
+              <img src="https://i.pinimg.com/736x/ac/ca/2f/acca2fd176e836c5ec9fd0d9acccfd12.jpg"
+                   alt="Colour Mixing Basics Every Young Painter Should Know" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer" style="object-position:center bottom;">
+              <div class="blog-card-category"><span class="badge badge-coral">Painting Tips</span></div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> September 8, 2026 · 5 min</div>
+              <h3 class="blog-card-title">Colour Mixing Basics Every Young Painter Should Know</h3>
+              <p class="blog-card-excerpt">Primary colours, magical secondaries and muddy-brown rescues — fun mixing games that teach real colour theory without a single worksheet.</p>
+              <a href="blog-details.html" class="blog-card-read-more" id="article-4-link">Read More →</a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="tips">
+            <div class="blog-card-img-wrap">
+              <img src="https://i.pinimg.com/736x/30/88/11/308811fce4d77c05216301b6545925e0.jpg"
+                   alt="5 Gentle Watercolour Techniques Kids Pick Up in One Class" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer" style="object-position:center bottom;">
+              <div class="blog-card-category"><span class="badge badge-blue">Watercolour</span></div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> August 30, 2026 · 6 min</div>
+              <h3 class="blog-card-title">5 Gentle Watercolour Techniques Kids Pick Up in One Class</h3>
+              <p class="blog-card-excerpt">Wet-on-wet skies, salty textures and wax-resist surprises — simple techniques with gallery-worthy results for ages 6 and up.</p>
+              <a href="blog-details.html" class="blog-card-read-more" id="article-5-link">Read More →</a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="crafts">
+            <div class="blog-card-img-wrap">
+              <img src="https://i.pinimg.com/1200x/39/3c/79/393c792b8225195a9ee22099a83b6a1f.jpg"
+                   alt="The 10-Minute Daily Sketch Habit That Builds Brave Creators" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer" style="object-position:center bottom;">
+              <div class="blog-card-category"><span class="badge badge-mint">Creativity</span></div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> August 22, 2026 · 4 min</div>
+              <h3 class="blog-card-title">The 10-Minute Daily Sketch Habit That Builds Brave Creators</h3>
+              <p class="blog-card-excerpt">No erasers, no pressure — just ten playful minutes a day. Here's the routine our instructors recommend to every family.</p>
+              <a href="blog-details.html" class="blog-card-read-more" id="article-6-link">Read More →</a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="crafts">
+            <div class="blog-card-img-wrap">
+              <img src="https://i.pinimg.com/1200x/92/6d/34/926d340c168228859c2938e135efbfae.jpg"
+                   alt="Brilliant Art From the Recycling Bin" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
+              <div class="blog-card-category"><span class="badge badge-yellow">Crafts</span></div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> August 14, 2026 · 7 min</div>
+              <h3 class="blog-card-title">Brilliant Art From the Recycling Bin: 8 Weekend Makes</h3>
+              <p class="blog-card-excerpt">Cardboard, jars and old magazines become sculptures, collages and puppets — eco-friendly creativity the whole family enjoys.</p>
+              <a href="blog-details.html" class="blog-card-read-more" id="article-7-link">Read More →</a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="guides">
+            <div class="blog-card-img-wrap">
+              <img src="https://i.pinimg.com/736x/a7/31/82/a731826b691c36ffeab1a17153c18c1f.jpg"
+                   alt="Drawing vs Painting vs Crafts - Which Class Suits Your Child" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
+              <div class="blog-card-category"><span class="badge badge-yellow">Parent Guide</span></div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> August 5, 2026 · 8 min</div>
+              <h3 class="blog-card-title">Drawing vs Painting vs Crafts: Which Class Suits Your Child?</h3>
+              <p class="blog-card-excerpt">A practical parent's guide to matching your child's age, temperament and interests with the perfect first art class.</p>
+              <a href="blog-details.html" class="blog-card-read-more" id="article-8-link">Read More →</a>
+            </div>
+          </article>
+
+          <article class="blog-card" data-category="tips">
+            <div class="blog-card-img-wrap">
+              <img src="https://i.pinimg.com/736x/c9/0c/76/c90c76052b3902e8396bed30d385244b.jpg"
+                   alt="Winning Young Artist Competitions" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
+              <div class="blog-card-category"><span class="badge badge-coral">Competitions</span></div>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-date"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> July 28, 2026 · 6 min</div>
+              <h3 class="blog-card-title">Winning Young Artist Competitions: What Judges Really Look For</h3>
+              <p class="blog-card-excerpt">Originality beats perfection every time. Our instructors share insider tips from years of coaching young competition winners.</p>
+              <a href="blog-details.html" class="blog-card-read-more" id="article-9-link">Read More →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center mt-40" data-reveal style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <button class="btn btn-outline btn-lg" id="view-more-articles">View More (6 more)</button>
+          <button class="btn btn-outline btn-lg" id="view-less-articles" style="display:none;">Show Less ↑</button>
         </div>
       </div>
     </section>
@@ -177,8 +270,8 @@
         <div class="grid grid-3" data-reveal>
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=600&q=80"
-                   alt="Parent and child working on art project together" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/f3/f3/c2/f3f3c2f7953fe62becde8583e29d631c.jpg"
+                   alt="How to Talk to Your Child About Their Art" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer" style="object-position:top center;">
               <div class="blog-card-category"><span class="badge badge-yellow">Parent Guide</span></div>
             </div>
             <div class="blog-card-body">
@@ -191,8 +284,8 @@
 
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1551966775-a4ddc8df052b?w=600&q=80"
-                   alt="Child choosing art supplies" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/b1/42/d4/b142d4a74ce87814a0b7c1e65ae969a5.jpg"
+                   alt="The Parent's Complete Guide to Buying Art Supplies for Kids" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
               <div class="blog-card-category"><span class="badge badge-mint">Buying Guide</span></div>
             </div>
             <div class="blog-card-body">
@@ -205,8 +298,8 @@
 
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=600&q=80"
-                   alt="Children sharing artwork at home" class="blog-card-img" loading="lazy" width="400" height="225">
+              <img src="https://i.pinimg.com/736x/9a/4e/51/9a4e516b5cda2eb7b7287f26516d5033.jpg"
+                   alt="Art and Emotional Wellbeing for Children" class="blog-card-img" loading="lazy" width="400" height="225" referrerpolicy="no-referrer">
               <div class="blog-card-category"><span class="badge badge-coral">Wellbeing</span></div>
             </div>
             <div class="blog-card-body">
@@ -319,7 +412,7 @@
                 <input type="email" class="form-control" placeholder="Your email address" aria-label="Email address" style="border-radius:var(--radius-full);" required>
                 <button type="submit" class="btn btn-secondary" id="nl-submit-btn">Subscribe</button>
               </form>
-              <p style="margin-top:12px;font-size:0.78rem;color:rgba(51,38,61,0.7);"><i class="fa-solid fa-check" aria-hidden="true"></i> No spam ever &nbsp;·&nbsp; <i class="fa-solid fa-check" aria-hidden="true"></i> Unsubscribe anytime</p>
+              <p style="margin-top:12px;font-size:0.82rem;font-weight:600;color:#fff;"><i class="fa-solid fa-check" aria-hidden="true"></i> No spam ever &nbsp;·&nbsp; <i class="fa-solid fa-check" aria-hidden="true"></i> Unsubscribe anytime</p>
             </div>
           </div>
 
