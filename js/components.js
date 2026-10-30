@@ -64,7 +64,6 @@ function getNavbarHTML(activePage = '') {
     { label: '<i class="fa-solid fa-book-open" aria-hidden="true"></i> Blog', href: 'blog.html', key: 'blog' },
     { label: '<i class="fa-solid fa-phone" aria-hidden="true"></i> Contact Us', href: 'contact.html', key: 'contact' },
     { label: '<i class="fa-solid fa-sack-dollar" aria-hidden="true"></i> Pricing', href: 'pricing.html', key: 'pricing' },
-    { label: '<i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register', href: 'login.html', key: 'login' },
     { label: '<i class="fa-solid fa-map" aria-hidden="true"></i> Sitemap', href: 'sitemap.html', key: 'sitemap' },
   ].map(l => `<a href="${siteLink(l.href)}" class="mobile-nav-link ${activePage === l.key ? 'active' : ''}">${l.label}</a>`).join('');
 
@@ -86,7 +85,7 @@ function getNavbarHTML(activePage = '') {
     <div class="navbar-controls">
       <button class="navbar-btn-icon" data-theme-toggle title="Toggle Dark Mode" aria-label="Toggle dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
       <button class="navbar-btn-icon" data-dir-toggle title="Toggle RTL/LTR" aria-label="Toggle text direction" style="font-size:0.75rem;font-weight:700;">RTL</button>
-      <a href="${siteLink('login.html')}" class="btn btn-primary btn-sm" style="display:none;" id="nav-login-btn" aria-label="Login or Register">Login</a>
+      <a href="${siteLink('contact.html')}" class="btn btn-primary btn-sm navbar-cta" id="nav-cta-btn" aria-label="Book a free trial class"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Book a Free Trial</a>
       <button class="navbar-menu-toggle" id="navbar-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </div>
   </div>
@@ -108,8 +107,7 @@ function getNavbarHTML(activePage = '') {
     ${mobileLinks}
   </nav>
   <div class="mobile-menu-footer">
-    <a href="${siteLink('contact.html')}" class="btn btn-primary w-100" style="justify-content:center;"><i class="fa-solid fa-phone" aria-hidden="true"></i> Book a Trial Class</a>
-    <a href="${siteLink('login.html')}" class="btn btn-outline w-100" style="justify-content:center;"><i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register</a>
+    <a href="${siteLink('contact.html')}" class="btn btn-primary w-100" style="justify-content:center;"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Book a Free Trial</a>
   </div>
 </div>
 `;
@@ -143,12 +141,6 @@ function getFooterHTML() {
           </div>
         </a>
         <p>A premium children's art & painting studio where creativity blooms and young artists discover the joy of expression through color, form, and imagination.</p>
-        <div class="footer-social">
-          <a href="#" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          <a href="#" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
-          <a href="#" class="footer-social-link" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p" aria-hidden="true"></i></a>
-        </div>
       </div>
 
       <!-- Quick Links -->
@@ -171,7 +163,6 @@ function getFooterHTML() {
         <ul class="footer-links">
           <li><a href="${siteLink('service-details.html')}" class="footer-link"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i> Service Details</a></li>
           <li><a href="${siteLink('blog-details.html')}" class="footer-link"><i class="fa-solid fa-pen-to-square" aria-hidden="true"></i> Blog Details</a></li>
-          <li><a href="${siteLink('login.html')}" class="footer-link"><i class="fa-solid fa-lock" aria-hidden="true"></i> Login / Register</a></li>
           <li><a href="${siteLink('maintenance.html')}" class="footer-link"><i class="fa-solid fa-wrench" aria-hidden="true"></i> Maintenance</a></li>
           <li><a href="${siteLink('sitemap.html')}" class="footer-link"><i class="fa-solid fa-map" aria-hidden="true"></i> Sitemap</a></li>
           <li><a href="${siteLink('404.html')}" class="footer-link"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> 404 Page</a></li>
@@ -237,12 +228,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (navbarEl) navbarEl.outerHTML = getNavbarHTML(activePage);
   if (footerEl) footerEl.outerHTML = getFooterHTML();
-
-  // Show login button on desktop when not on login page
-  setTimeout(() => {
-    const loginBtn = document.getElementById('nav-login-btn');
-    if (loginBtn && activePage !== 'login') {
-      loginBtn.style.display = 'inline-flex';
-    }
-  }, 100);
 });

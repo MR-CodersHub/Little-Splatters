@@ -525,64 +525,6 @@ const ContactForm = {
 };
 
 /* ============================================================
-   AUTH FORMS
-   ============================================================ */
-const AuthForms = {
-  init() {
-    const loginForm = $('#login-form');
-    const registerForm = $('#register-form');
-
-    if (loginForm) {
-      FormValidator.initForm(loginForm, () => {
-        Toast.success('Welcome Back!', 'You\'ve been logged in successfully.');
-        setTimeout(() => {
-          const inPages = window.location.pathname.replace(/\\/g, '/').includes('/pages/');
-          window.location.href = inPages ? '../index.html' : 'index.html';
-        }, 1500);
-      });
-    }
-
-    if (registerForm) {
-      FormValidator.initForm(registerForm, () => {
-        Toast.success('Account Created!', 'Welcome to Little Splatters! Check your email to verify.');
-        setTimeout(() => { registerForm.reset(); }, 2000);
-      });
-    }
-  }
-};
-
-/* ============================================================
-   AUTH CARD SPOTLIGHT (login <-> register highlight)
-   ============================================================ */
-const AuthSpotlight = {
-  init() {
-    const loginCard = $('#login-card');
-    const registerCard = $('#register-card');
-    if (!loginCard || !registerCard) return;
-
-    const spotlight = (target) => {
-      [loginCard, registerCard].forEach(c => c.classList.remove('auth-card-spotlight'));
-      // Re-trigger glow animation
-      void target.offsetWidth;
-      target.classList.add('auth-card-spotlight');
-      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      const input = target.querySelector('input');
-      if (input) setTimeout(() => input.focus({ preventScroll: true }), 600);
-    };
-
-    // Default: sign-in (left) highlighted
-    loginCard.classList.add('auth-card-spotlight');
-
-    document.addEventListener('click', (e) => {
-      const link = e.target.closest('a[href="#register-card"], a[href="#login-card"]');
-      if (!link) return;
-      e.preventDefault();
-      spotlight(link.getAttribute('href') === '#register-card' ? registerCard : loginCard);
-    });
-  }
-};
-
-/* ============================================================
    NEWSLETTER FORM
    ============================================================ */
 const Newsletter = {
@@ -770,8 +712,6 @@ document.addEventListener('DOMContentLoaded', () => {
   Toast.init();
   TrialForm.init();
   ContactForm.init();
-  AuthForms.init();
-  AuthSpotlight.init();
   Newsletter.init();
   StatCounter.init();
   Countdown.init();

@@ -13,6 +13,7 @@
   /* Brand Palette */
   --ink-plum:        #33263D;
   --coral-pink:      #F07C72;
+  --primary:         #F07C72; /* Primary brand color — same in Light & Dark */
   --sunshine-yellow: #F2C94C;
   --sky-blue:        #72B7D8;
   --fresh-mint:      #A8C9A5;
@@ -73,6 +74,7 @@
 
 /* Dark Mode */
 [data-theme="dark"] {
+  --primary:         #F07C72; /* Primary stays consistent with Light Mode */
   --bg-primary:      #1E1625;
   --bg-secondary:    #2A1F35;
   --bg-card:         #33263D;
@@ -654,6 +656,17 @@ p { color: var(--text-secondary); line-height: 1.8; }
   color: var(--coral-pink);
 }
 
+/* Header CTA — match theme & RTL icon buttons exactly (40px height) */
+.navbar-cta {
+  height: 40px;
+  padding: 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
 .navbar-menu-toggle {
   display: none;
   width: 40px;
@@ -1139,6 +1152,11 @@ p { color: var(--text-secondary); line-height: 1.8; }
 
 .form-control::placeholder {
   color: var(--text-muted);
+}
+
+/* Dark mode: native widgets (date-picker calendar icon, select arrows) render light */
+[data-theme="dark"] .form-control {
+  color-scheme: dark;
 }
 
 textarea.form-control {
@@ -2193,8 +2211,9 @@ select.form-control {
   .navbar-nav { display: none; }
   .navbar-menu-toggle { display: flex; }
 
-  /* Login lives in the mobile menu on tablet/mobile */
-  #nav-login-btn { display: none !important; }
+  /* Primary CTA lives in the mobile menu on tablet/mobile — hide navbar copy so it never duplicates */
+  .navbar-cta { display: none !important; }
+  .navbar-controls .navbar-cta { display: none !important; }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -2333,6 +2352,11 @@ select.form-control {
     width: 34px;
     height: 34px;
     flex-shrink: 0;
+  }
+
+  .navbar-cta {
+    height: 34px;
+    padding: 0 14px;
   }
 
   .section-header,
